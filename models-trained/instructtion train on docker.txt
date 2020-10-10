@@ -1,0 +1,23 @@
+!move all you data to folder in train-tesseract/data/NAME-MODEL-groung-truth (*gt.txt and tif) - be curful that the name of each data file wont be too long (~less the 12 chars)!
+enter where the train-tesseract is located
+
+WRITE OUTSIDE DOCKER:
+
+cd ~/Documents/shecodes/train/train-tesseract
+docker-compose -f docker.dev.yml up
+sudo docker exec -ti CONAINER-NAME bash
+
+WRITE IN DOCKER:
+
+cd /app/src/tesstrain/data
+mkdir NAME-MODEL-ground-truth
+cp -a /app/data/heb-NAME-MODEL-truth/* /app/src/tesstrain/data/NAME-MODEL-ground-truth/.
+cd /app/src/tesstrain/
+make training MODEL_NAME=heb-fonts3 START_MODEL=heb LANG_TYPE=RTL PSM=7 TESSDATA=/usr/local/share/tessdata
+
+OUT DOCKER:
+
+sudo docker cp CONTAINERID:/app/src/tesstrain/data/NAMEMODEL/NAME-MODEL.traineddata PATH-OUTPUT-HOST
+
+
+!COPY MODEL-NAME.traineddata to folder where \Tesseract-OCR\tessdata
