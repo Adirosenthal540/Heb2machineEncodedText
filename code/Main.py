@@ -37,8 +37,8 @@ def insertDocuments(i):
         }
     return switcher.get(i, " ")
 
-HELP_TEXT_DOC_CREATE = r"C:\Users\Adi Rosental\Documents\she_code\shecode_final_project\code\help_create.txt"
-HELP_TEXT_DOC_EXTRACT = r"C:\Users\Adi Rosental\Documents\she_code\shecode_final_project\code\help_extract.txt"
+HELP_TEXT_DOC_CREATE = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\code\help_create.txt"
+HELP_TEXT_DOC_EXTRACT = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\code\help_extract.txt"
 IMAGE_WIDTH_TO_SHOW = 600
 IMAGE_HEIGHT_TO_SHOW = 600
 
@@ -71,7 +71,6 @@ def reset_global_parameters():
     markTextArea = False
     status_program = None
     scannedInsertDocuments = None
-    delete_files = []
     txtFiles = []
     points = []
     images =[]
@@ -160,14 +159,12 @@ def saveImagelabel():
     global entrylabel, newLabeleForTrain, numImageLine, root_setLabel, image_list_tolabel, button_saveImage
     global countImageGotLabel, statuslabel
     if entrylabel.get()!="":
+        if newLabeleForTrain[numImageLine] == "":
+            countImageGotLabel += 1
         newLabeleForTrain[numImageLine] = entrylabel.get()
     else:
         popup_message("ERROR - didn't insert any label for the image, try again", maessage_type(2))
         return
-
-    if newLabeleForTrain[numImageLine] == "":
-        countImageGotLabel += 1
-
     button_saveImage = Button(root_setLabel, text="Save the image with this label", padx=70, pady=20, command = saveImagelabel, bg = "medium sea green")
     button_saveImage.grid(row=4, column=1)
 
@@ -428,10 +425,27 @@ def hide_image():
     show_image_butten = Button(frameExtract, text="show image", command=show_image, font=("Ariel,10"), width = 20, pady=5).grid(row=0, column=0)
     hide_image_butten = Button(frameExtract, text="hide image", state=DISABLED, font=("Ariel,10"), width = 20, pady=5).grid(row=0, column=1)
 
+# def slide_uper_th( root):
+#     global imageTK_, my_label2, horizontal2, btn_THRESH_BINARY_uper, choosenImage, choosenImage_originsize
+#     global my_image_label, original
+#
+#     image_array = original.copy()
+#     width, height = calculate_width_height(image_array, IMAGE_WIDTH_TO_SHOW, IMAGE_HEIGHT_TO_SHOW)
+#     image_array = cv.resize(image_array, (width, height))
+#
+#     _, th = cv.threshold(image_array, horizontal2.get(), 255, cv.THRESH_BINARY)
+#     _, th2 = cv.threshold(original.copy(), horizontal2.get(), 255, cv.THRESH_BINARY)
+#     image_array = cv.bitwise_xor(choosenImage, th, mask=None)
+#     choosenImage_originsize = cv.bitwise_xor(choosenImage_originsize, th2, mask=None)
+#
+#     image_fromarray = Image.fromarray(image_array)
+#     imageTK_ = ImageTk.PhotoImage(image_fromarray)
+#     my_image_label = Label(root, image=imageTK_)
+#     my_image_label.grid(row=1, column=0, rowspan = 5)
 
 def slide_threshold(image_array, root):
     global imageTK_, my_image_label, choosenImage, horizontal, btn_dilation, btn_opening, btn_closing, choosenImage_originsize
-
+    global my_label2, horizontal2, btn_THRESH_BINARY_uper
     _, th = cv.threshold(image_array, horizontal.get(), 255, cv.THRESH_BINARY)
     _, choosenImage_originsize = cv.threshold(choosenImage_originsize, horizontal.get(), 255, cv.THRESH_BINARY)
 
@@ -445,9 +459,15 @@ def slide_threshold(image_array, root):
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
 
-    btn_dilation = Button(root, text = "dilation", command = lambda: dilation(root)).grid(row = 2, column = 3)
-    btn_opening = Button(root, text = "opening", command = lambda: opening(root)).grid(row = 2, column = 2)
-    btn_closing = Button(root, text = "closing", command = lambda: closing(root)).grid(row = 2, column = 1)
+    # horizontal2 = Scale(root, from_ = horizontal.get(), to =  255, orient = HORIZONTAL)
+    # horizontal2.grid(row = 2, column = 2)
+    # my_label2 = Label(root, text = "Choose uper value :")
+    # my_label2.grid(row = 2, column = 1)
+    # btn_THRESH_BINARY_uper = Button(root, text = "click", command = lambda: slide_uper_th( root)).grid(row = 2, column = 3)
+
+    btn_dilation = Button(root, text = "dilation", command = lambda: dilation(root)).grid(row = 4, column = 3)
+    btn_opening = Button(root, text = "opening", command = lambda: opening(root)).grid(row = 4, column = 2)
+    btn_closing = Button(root, text = "closing", command = lambda: closing(root)).grid(row = 4, column = 1)
 
 def get_original(root):
     global my_image_label, original, imageTK_, choosenImage, choosenImage_originsize, images_numpy_array, top_edit
@@ -502,7 +522,7 @@ def dilation(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 2, column = 3)
+    btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 4, column = 3)
 
 def opening(root):
     global my_image_label, original, imageTK_, choosenImage, btn_dilation, btn_opening, choosenImage_originsize, top_edit
@@ -519,7 +539,7 @@ def opening(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 2, column = 2)
+    btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 4, column = 2)
 
 def closing(root):
     global my_image_label, original, imageTK_, choosenImage, btn_closing, choosenImage_originsize, top_edit
@@ -539,7 +559,7 @@ def closing(root):
 
 def userChooseTresholds(image_array, root):
     global horizontal, choosenImage, choosenImage_originsize, original, my_image_label, imageTK_, get_original_button
-    global btn_dilation, btn_opening, btn_closing, top_edit, images_numpy_array
+    global btn_dilation, btn_opening, btn_closing, top_edit, images_numpy_array, btn_THRESH_BINARY_uper
 
     horizontal = Scale(root, from_ =  0, to =  255, orient = HORIZONTAL)
     horizontal.grid(row = 1, column = 2)
@@ -567,9 +587,9 @@ def userChooseTresholds(image_array, root):
 
     btn_THRESH_BINARY = Button(root, text = "click", command = lambda: slide_threshold(original.copy(), root)).grid(row = 1, column = 3)
 
-    btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 2, column = 3)
-    btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 2, column = 2)
-    btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 2, column = 1)
+    btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 4, column = 3)
+    btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 4, column = 2)
+    btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 4, column = 1)
     get_original_button = Button(root, text = "click to original", command = lambda: get_original(root), width = 25).grid(row = 5, column = 1, columnspan = 3)
     save_image_button = Button(root, text="Click here to run program on this image", command=save_edit_image).grid(row=8, column=0, columnspan = 4)
     root.mainloop()
@@ -766,6 +786,7 @@ def exit_check_data(root):
     if imageToDel!=[]:
         popup_message("Deleted "+str(len(imageToDel))+" images, thank you", maessage_type(0))
         DataManager.delete_from_database(imageToDel)
+
 
     else:
         popup_message("All the Images got into the database, THANK YOU :)", maessage_type(0))
@@ -1114,7 +1135,7 @@ def compare_to_real_label(result):
 def calcMatch(result):
     global root_compare, insert_real_text, compare_label
     precentMatckh = ModelTesseract.calcMatch(insert_real_text.get("1.0",END), result)
-    compare_label = Label(root_compare, text="The match precent according jaro-winkler similarity - "+str(round(precentMatckh,2))+"%",
+    compare_label = Label(root_compare, text="The match precent according similarity - "+str(round(precentMatckh,2))+"%",
                     bg="steel blue", font=("Ariel", 16), fg = "red",bd = 5, width=50, anchor = CENTER)
     compare_label.grid(row = 6, column = 0, columnspan = 3)
 def tryagain():

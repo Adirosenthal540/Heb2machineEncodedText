@@ -92,7 +92,7 @@ def Insert_to_folder(images_processed, folderSave):
         f.close()
         numImage += 1
 
-def extract_ines_of_text_from_images_and_match_labels(folder, txtfile, ):
+def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
     font_name = os.path.basename(folder)[5:-8] #remove "docx_" and "_images_"
     font_origin = font_name
     if len(font_name)>5:
@@ -154,17 +154,17 @@ def main():
     #
     # convert_wordDocx_to_x_words_in_line_txtFile(6, doc, os.path.join(outputPathForTextFile,  "test_word_file21.txt"))
 
-    # folder = r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts\docs_to_image2"
+    # folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont"
     # convert_pdf_to_tif_images(folder)
-    #
-    # txtfile = r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts\test_word_file21.txt"
-    # folder = r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts\docs_to_image2"
-    #
-    # files = os.listdir(folder)
-    # for file in files:
-    #     if file[-8:] == "_images_":
-    #         print(file)
-    #         extract_ines_of_text_from_images_and_match_labels(os.path.join(folder, file), txtfile)
+
+    txtfile = r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts\test_word_file21.txt"
+    folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont"
+
+    files = os.listdir(folder)
+    for file in files:
+        if file[-8:] == "_images_":
+            print(file)
+            extract_ines_of_text_from_images_and_match_labels(os.path.join(folder, file), txtfile)
 
 if __name__ == "__main__":
     main()

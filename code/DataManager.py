@@ -13,8 +13,8 @@ MINPERCENT = 25
 # *** the user will insert his own ID and the name of each image will be calculate from uniqe ID of the image (integer)
 # *** and the user ID - like: 1-316550797.tif, 1-316550797.gt.txt, 2-316550797.tif, 2-316550797.gt.txt etc.
 
-DataFolder = r"C:\Users\Adi Rosental\Documents\shecode_final_project\DataBase"
-infoFile = r"C:\Users\Adi Rosental\Documents\she_code\shecode_AdiRosenthal\DataBase"
+DataFolder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\DataBase"
+infoFile = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\code\info.txt"
 
 
 def Insert_to_database(images_processed):

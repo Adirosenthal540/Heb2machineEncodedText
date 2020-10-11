@@ -17,6 +17,7 @@ def calcMatch(realtext, resultText, compare_methods = "SQ"):
         result_score = jellyfish.jaro_winkler_similarity(realtext, resultText) * 100
     elif compare_methods == "SQ":
         result_score = SQ(None, realtext, resultText).ratio() * 100
+    print (compare_methods)
     return result_score
 
 class ModelTesseract:
@@ -47,8 +48,9 @@ class ModelTesseract:
         self.acuracy = result
 
 
-    def Check_model_tesseract(self, lang_trained, folder_validation, folder_output_txtfile, psm=7, compare_methods = "jaro winkler"):
+    def Check_model_tesseract(self, folder_validation, folder_output_txtfile, psm=7, compare_methods = "SQ"):
         time = datetime.datetime.now()
+        lang_trained = self.lang
         file_to_save = open(os.path.join(folder_output_txtfile, lang_trained + time.strftime("_%d_%m_%H_%M") + ".txt"), "w",
                             encoding="utf-8")
         file_to_save.write("DATE : " + time.strftime("%d_%m %H_%M") + "\n")
@@ -70,11 +72,11 @@ class ModelTesseract:
                 txt_file = open(os.path.join(folder_validation, file[:-4] + ".gt.txt"), "r", encoding="utf-8")
                 realText = txt_file.read()
                 txt_file.close()
-                result_score = calcMatch(compare_methods, realText, resultText)
-                result_score_befor_train = calcMatch(compare_methods, realText, resultText_before)
+                result_score = calcMatch(realText, resultText, compare_methods)
+                result_score_befor_train = calcMatch(realText, resultText_before, compare_methods)
 
                 diff = result_score - result_score_befor_train
-                txt_print = f"text: {realText}\nOutput: {resultText}Befor: {resultText_before}Percent coincidence after train: {round(result_score,2)}%\ndiff between befor train and after: {round(diff,2)}\n"
+                txt_print = f"text: {realText}\nOutput: {resultText}Befor: {resultText_before}Percent coincidence after train: {round(result_score,2)}%\ndiff between befor train and after: {round(diff,2)}%\n"
                 file_to_save.write(txt_print + "\n\n")
                 sum += result_score
                 count += 1
