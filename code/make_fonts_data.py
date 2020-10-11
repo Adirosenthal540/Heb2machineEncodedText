@@ -81,8 +81,12 @@ def convert_pdf_to_tif_images(folder):
 def Insert_to_folder(images_processed, folderSave):
     numImage = 0
     image_path_list = []
+    files = os.listdir(folderSave)
     for imageP in images_processed:
         nameImage = imageP.handwrite_ID +"_"+ str(numImage)
+        while nameImage+".tif" in files:
+            numImage +=1
+            nameImage = imageP.handwrite_ID + "_" + str(numImage)
         pathNewImage = os.path.join(folderSave, nameImage+".tif")
         image_path_list.append(pathNewImage)
         im = Image.fromarray(imageP.imageArray)
@@ -93,7 +97,7 @@ def Insert_to_folder(images_processed, folderSave):
         numImage += 1
 
 def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
-    font_name = os.path.basename(folder)[5:-8] #remove "docx_" and "_images_"
+    font_name = os.path.basename(folder)[:-8] #remove "docx_" and "_images_"
     font_origin = font_name
     if len(font_name)>5:
         font_name = font_name[0:10]
@@ -109,7 +113,7 @@ def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
     os.mkdir(os.path.join(folder, font_name))
     folderSave = os.path.join(folder, font_name)
 
-    till_page = len(files)-2
+    till_page = len(files)
     print(till_page)
 
     txt_file = open(txtfile, "r" , encoding="utf-8")
@@ -126,7 +130,8 @@ def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
 
     for i in range(till_page-1):
         print(i)
-        image = os.path.join(folder, "docx_"+font_origin+"_"+str(i)+".tif")
+        image = os.path.join(folder, font_origin+"_"+str(i)+".tif")
+
         print(image)
         imageArray = cv.imread(image, 0)
         width = imageArray.shape[1]
@@ -147,24 +152,55 @@ def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
     Insert_to_folder(newImagesForTrain, folderSave)
     print(num_line, num_lines_images)
 
+def extract_ines_of_text_from_image_and_match_label(imageArray, text,fontname, folderSave):
+    lines_txt = text.split('\n')
+    num_lines_txt = len(lines_txt)
+    print(num_lines_txt)
+    num_line=0
+    newImagesForTrain = []
+
+    width = imageArray.shape[1]
+    height = imageArray.shape[0]
+    boundries = ImageProcessing.GetLineBounds(imageArray)
+
+    print(len(boundries))
+    num_lines_image = len(boundries)
+    for i in range(len(boundries)):
+        x, y, w, h = boundries[i]
+        cutImage = imageArray[max(0, min(y, y+h)-NUMPIXELS):min(max(y, y+h)+NUMPIXELS,height) , max(0, min(x, x+w)-NUMPIXELS) :min(width, max(x, x+w)+NUMPIXELS)]
+        while lines_txt[num_line]=="" or lines_txt[num_line]==" " and num_line<num_lines_txt-1:
+            num_line+=1
+        if num_line<=num_lines_txt-1:
+            Label = lines_txt[num_line]
+            num_line += 1
+            newImagesForTrain.append(ImageProcessing.ImageProcessing(cutImage, imagePath=None, handwrite_ID=fontname, Label = Label))
+
+    Insert_to_folder(newImagesForTrain, folderSave)
+
 
 def main():
     # doc = docx.Document(r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts\hebrew_text2-cahol_lavan.docx")
     # outputPathForTextFile = r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts"
     #
     # convert_wordDocx_to_x_words_in_line_txtFile(6, doc, os.path.join(outputPathForTextFile,  "test_word_file21.txt"))
-
+    #
     # folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont"
     # convert_pdf_to_tif_images(folder)
 
-    txtfile = r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts\test_word_file21.txt"
-    folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont"
-
-    files = os.listdir(folder)
-    for file in files:
-        if file[-8:] == "_images_":
-            print(file)
-            extract_ines_of_text_from_images_and_match_labels(os.path.join(folder, file), txtfile)
+    txtfile = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\2.txt"
+    folderSave = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\chani2"
+    # folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont"
+    # files = os.listdir(folder)
+    # for file in files:
+    #     if file[-8:] == "_images_":
+    #         print(file)
+    #         extract_ines_of_text_from_images_and_match_labels(os.path.join(folder, file), txtfile)
+    #
+    imageArray = cv.imread(r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\chani2_1.tif", 0)
+    txt_file = open(txtfile, "r" , encoding="utf-8")
+    text = txt_file.read()
+    txt_file.close()
+    extract_ines_of_text_from_image_and_match_label(imageArray, text,"chani2", folderSave)
 
 if __name__ == "__main__":
     main()

@@ -60,7 +60,7 @@ images = []
 txt_file = []
 delete_files = []
 modelName = None
-
+controller_program = None
 global root
 
 def reset_global_parameters():
@@ -172,8 +172,8 @@ def saveImagelabel():
     statuslabel.grid(row=6, column=0, columnspan=3)
 
 def insert_new_labeled_image():
-    global newLabeleForTrain, root_setLabel, image_list_tolabel, origin_line_images_array, controler_labeled
-    handwrite_ID = controler_labeled.image_processing_list[0].handwrite_ID
+    global newLabeleForTrain, root_setLabel, image_list_tolabel, origin_line_images_array, controller_labeled
+    handwrite_ID = controller_labeled.image_processing_list[0].handwrite_ID
     print(handwrite_ID)
     imagesInsertDatabase =[]
     count = 0
@@ -183,27 +183,38 @@ def insert_new_labeled_image():
             root_setLabel.destroy()
             imagesInsertDatabase.append(ImageProcessing.ImageProcessing(origin_line_images_array[i], Label = newLabeleForTrain[i] ,imagePath = None, handwrite_ID = handwrite_ID))
     if count >0 :
-        controler_labeled.insert_data_to_dataBase(imagesInsertDatabase)
+        controller_labeled.insert_data_to_dataBase(imagesInsertDatabase)
     else:
         popup_message("No data to insert", maessage_type(2))
 
     root_setLabel.destroy()
 
 
-def userSetLabel(line_images_array, controler):
-    global image_list_tolabel, imageTK, origin_line_images_array, entrylabel, numImageLine, newLabeleForTrain, root_setLabel, button_saveImage, controler_labeled
-    global label_title, label_description
+def userSetLabel(line_images_array, controller):
+    global image_list_tolabel, imageTK, origin_line_images_array, entrylabel, numImageLine
+    global newLabeleForTrain, root_setLabel, button_saveImage, controller_labeled
+    global label_title, label_description, countImageGotLabel, statuslabel
     top = Toplevel()
     top.title("Set labels for new handwriting lines")
-    controler_labeled = controler
-    userSetLabel_action(line_images_array, top)
-
-def userSetLabel_action(line_images_array, top):
-    global image_list_tolabel, imageTK, origin_line_images_array, entrylabel, numImageLine, newLabeleForTrain, button_saveImage
-    global label_title, label_description, root_setLabel, countImageGotLabel, button_saveImage, statuslabel
+    controller_labeled = controller
     numImageLine = 0
     countImageGotLabel = 0
-    newLabeleForTrain = [""] * len(line_images_array)
+    print(len(line_images_array))
+    print(controller.labels)
+    if controller.labels!=None:
+        lines_txt = controller.labels.split('\n')
+        while "" in lines_txt:
+            lines_txt.remove("")
+        print(lines_txt)
+        print(lines_txt)
+        if len(line_images_array) == len(lines_txt):
+            newLabeleForTrain = lines_txt
+        else:
+            newLabeleForTrain = [""] * len(line_images_array)
+    else:
+        newLabeleForTrain = [""] * len(line_images_array)
+    print(newLabeleForTrain)
+    print(len(line_images_array))
     image_list_tolabel =[]
 
     origin_line_images_array = line_images_array.copy()
@@ -234,14 +245,15 @@ def userSetLabel_action(line_images_array, top):
     button_backward.grid(row=2, column=0)
 
     entrylabel = Entry(root_setLabel, borderwidth=5, justify='right', width = 80)
-    # entrylabel.tag_configure('tag-right', justify='right')
-    # entrylabel.insert('end', str(entrylabel.get()), 'tag-right')
     entrylabel.grid(row=3, column=0, columnspan = 2, sticky= E )
     label_entery = Label(root_setLabel, text=TEXT_ENTRY_LABEL, anchor = "w")
     label_entery.grid(row=3, column=3)
 
-    button_saveImage = Button(root_setLabel, text="Save the image with this label", padx=70, pady=20, command = saveImagelabel)
+    if newLabeleForTrain[numImageLine] != "":
+        entrylabel.insert(0, newLabeleForTrain[numImageLine])
+    button_saveImage = Button(root_setLabel, text="Save the image with this label", padx=70, pady=20,command=saveImagelabel)
     button_saveImage.grid(row=4, column=1)
+
 
     button_insert_labeled_images = Button(root_setLabel, text="Insert into database", padx=70, pady=20, command = insert_new_labeled_image)
     button_insert_labeled_images.grid(row=5, column=0, columnspan = 3)
@@ -445,8 +457,10 @@ def hide_image():
 
 def slide_threshold(image_array, root):
     global imageTK_, my_image_label, choosenImage, horizontal, btn_dilation, btn_opening, btn_closing, choosenImage_originsize
-    global my_label2, horizontal2, btn_THRESH_BINARY_uper
+    global my_label2, horizontal2, btn_THRESH_BINARY_uper, images_numpy_array
+
     _, th = cv.threshold(image_array, horizontal.get(), 255, cv.THRESH_BINARY)
+    choosenImage_originsize = images_numpy_array[0].copy()
     _, choosenImage_originsize = cv.threshold(choosenImage_originsize, horizontal.get(), 255, cv.THRESH_BINARY)
 
     image_array = th.copy()
@@ -485,7 +499,7 @@ def get_original(root):
     my_image_label.grid(row=1, column=0, rowspan = 5)
 
 def save_edit_image():
-    global choosenImage, top_edit, isTrain, root, scannedInsertDocuments, writerID
+    global choosenImage, top_edit, isTrain, root, scannedInsertDocuments, writerID, controller_program
     global images_numpy_array_show, images_numpy_array, imageTK_list, choosenImage_originsize
     print (choosenImage)
     images_numpy_array_show[0] = choosenImage
@@ -495,13 +509,11 @@ def save_edit_image():
     if isTrain:
         images.append(ImageProcessing.ImageProcessing(images_numpy_array[0], imagePath=images_path_list[0],handwrite_ID=writerID))
     else:
-        images.append(ImageProcessing.ImageProcessing(images_numpy_array[0], imagePath=images_path_list[0]))
+        images.append(ImageProcessing.ImageProcessing(images_numpy_array[0], imagePath=images_path_list[0],handwrite_ID="result"))
 
-    print("isTrain"+str(isTrain))
-    print("scannedInsertDocuments "+str(scannedInsertDocuments))
-    controller = Controller.Controller(isTrain, images, root, isScanned = scannedInsertDocuments, modelName=modelName)
+    controller_program = Controller.Controller(isTrain, images, root, isScanned = scannedInsertDocuments, modelName=modelName)
     top_edit.destroy()
-    result = controller.main()
+    result = controller_program.main()
 
     showResults(root, result)
 
@@ -555,7 +567,7 @@ def closing(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 2, column = 1)
+    btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 4, column = 1)
 
 def userChooseTresholds(image_array, root):
     global horizontal, choosenImage, choosenImage_originsize, original, my_image_label, imageTK_, get_original_button
@@ -1030,15 +1042,6 @@ def calculate_width_height(image_array, max_width_to_show, max_height_to_show):
     return new_width, new_height
 
 def extractResult(result):
-    # root.withdraw()
-    # folder_to_save = filedialog.askdirectory()
-    # root.deiconify()
-    # baseNameImage = os.path.basename(images[0].imagePath)
-    # nameImage = os.path.splitext(baseNameImage)[0]
-    # f = open(os.path.join(folder_to_save,  nameImage+ ".txt"), "w+", encoding="utf-8")
-    # f.write(result)
-    # f.close()
-    # popup_message("Secceeded, hope to see you again :)", maessage_type(0))
     root.withdraw()
     file_to_save = filedialog.asksaveasfile(mode = "w", defaultextension=".txt", title="insert handriting image")
     if file_to_save is None:
@@ -1085,14 +1088,13 @@ def showResults(root, result):
 
         try_again_Button = Button(frame_text, text="Try again", command=tryagain).grid(row=1, column=0,columnspan=2,sticky=W + E)
         save_Button = Button(frame_text, text="Extract result", command=lambda: extractResult(result)).grid(row=2, column=0,columnspan=2,sticky=W + E)
-        #compare_to_real_label_Button = Button(frame_text, text="Compare to real Label").grid(row=3, column=0,columnspan=2,sticky=W + E)
         compare_to_real_label_Button = Button(frame_text, text="Compare to real Label", command=lambda: compare_to_real_label(result)).grid(row=3, column=0,columnspan=2,sticky=W + E)
 
 def compare_to_real_label(result):
     global frame_text, insert_real_text, compare_label, root_compare
     root_compare = Toplevel()
     root_compare.title("Compare result to the real label")
-    root_compare.geometry(str(IMAGE_WIDTH_TO_SHOW)+"x520")
+    root_compare.geometry(str(IMAGE_WIDTH_TO_SHOW)+"x550")
     root_compare.configure(background = "steel blue")
     compare_label = Label(root_compare, text="Write the real Label for the image:",
                     bg="steel blue", font=("Ariel", 16), width=50, anchor = CENTER)
@@ -1100,8 +1102,6 @@ def compare_to_real_label(result):
     tesseract_result_l = Label(root_compare, text=f"Result using trained tesseract model:",
                     bg="steel blue", font=("Ariel", 10), width=50)
     tesseract_result_l.grid(row = 1, column = 0,  columnspan = 3)
-
-
     frame_tesseract_text = Frame(root_compare, relief=SUNKEN)
     yscrollbar = Scrollbar(frame_tesseract_text)
     yscrollbar.grid(row=0, column=6, sticky=N + S)
@@ -1112,8 +1112,6 @@ def compare_to_real_label(result):
     my_result.config(yscrollcommand=scrl.set)
     my_result.grid(row=0, column=0, sticky=N + S + E + W)
     frame_tesseract_text.grid(row=2, column=0, columnspan=3)
-
-
     label_write_real = Label(root_compare, text="Please write the real label of the text :",
                     bg="steel blue", font=("Ariel", 10), width=50)
     label_write_real.grid(row = 3, column = 0, columnspan = 3)
@@ -1128,16 +1126,28 @@ def compare_to_real_label(result):
     insert_real_text.config(yscrollcommand=scrl.set)
     insert_real_text.grid(row=0, column=0, sticky=N + S + E + W)
     frame_realtext.grid(row=4, column=0, columnspan = 3)
-    calculate_match_btn = Button(root_compare, text="Calculate match", relief=SUNKEN, width = 20, pady = 10, command=lambda: calcMatch(result))
+    calculate_match_btn = Button(root_compare, text="Calculate match", relief=SUNKEN, width = 20, pady = 10,
+                                 command=lambda: calcMatch(result))
     calculate_match_btn.grid(row=5, column=1,sticky=W + E)
     root_compare.mainloop()
 
+def insertresult():
+    global root_compare, controller_program, userInserLabel
+    root_compare.destroy()
+    controller_program.setLabels(userInserLabel)
+    controller_program.processLabeledImages()
+
 def calcMatch(result):
-    global root_compare, insert_real_text, compare_label
-    precentMatckh = ModelTesseract.calcMatch(insert_real_text.get("1.0",END), result)
+    global root_compare, insert_real_text, compare_label, userInserLabel
+    userInserLabel = insert_real_text.get("1.0",END)
+    precentMatckh = ModelTesseract.calcMatch(userInserLabel, result)
     compare_label = Label(root_compare, text="The match precent according similarity - "+str(round(precentMatckh,2))+"%",
                     bg="steel blue", font=("Ariel", 16), fg = "red",bd = 5, width=50, anchor = CENTER)
     compare_label.grid(row = 6, column = 0, columnspan = 3)
+    compare_label = Button(root_compare, text="Want to insert your true label into database?",
+                           command= insertresult, font=("Ariel", 12), bd = 5, width=40, anchor = CENTER)
+    compare_label.grid(row = 7, column = 0, columnspan = 3)
+
 def tryagain():
     global frame_text
     frame_text.destroy

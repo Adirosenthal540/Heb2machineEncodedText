@@ -11,16 +11,15 @@ from matplotlib import pyplot as plt
 import os
 
 
-
-
 class Controller():
 
-    def __init__(self, isTrain, images, root = None, isScanned = False, modelName=None):
+    def __init__(self, isTrain, images, root = None, isScanned = False, modelName=None, labels = None):
         self.isTrain = isTrain
         self.isScanned = isScanned
         self.image_processing_list = images
         self.root = root
         self.modelName = modelName
+        self.labels = labels
 
     def processLabeledImages(self):
         image = self.image_processing_list[0]
@@ -32,6 +31,8 @@ class Controller():
             line_images_array.append(cutImage)
         Main.userSetLabel(line_images_array, self)
 
+    def setLabels(self, labels):
+        self.labels = labels
 
     def processScannedImages(self):
         newImagesForTrain =[]
@@ -49,8 +50,6 @@ class Controller():
         else:
             tesseract = ModelTesseract.ModelTesseract()
         text = tesseract.ExportTextTesseract(self.image_processing_list[0].imageArray)
-        # cv.imshow("hhhh",self.image_processing_list[0].imageArray)
-        # cv.waitKey(0)
         return text
 
     def insert_data_to_dataBase(self, newImagesForTrain):
