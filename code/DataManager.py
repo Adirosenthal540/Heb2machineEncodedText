@@ -1,9 +1,9 @@
 import Main
+import config
 import os
 import numpy as np
 from tkinter import *
 from PIL import ImageTk, Image
-import cv2 as cv
 
 GRAYSHADE =150
 MINPERCENT = 25
@@ -13,8 +13,9 @@ MINPERCENT = 25
 # *** the user will insert his own ID and the name of each image will be calculate from uniqe ID of the image (integer)
 # *** and the user ID - like: 1-316550797.tif, 1-316550797.gt.txt, 2-316550797.tif, 2-316550797.gt.txt etc.
 
-DataFolder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\DataBase"
-infoFile = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\code\info.txt"
+HOME_DIRECTORY = config.get_home_directory()
+DataFolder = os.path.join(HOME_DIRECTORY, "data\DataBase")
+infoFile = os.path.join(HOME_DIRECTORY, "code\info.txt")
 
 
 def Insert_to_database(images_processed):

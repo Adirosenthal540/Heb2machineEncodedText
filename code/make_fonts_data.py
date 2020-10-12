@@ -1,9 +1,7 @@
 from tkinter import *
 import cv2 as cv
 from PIL import Image, ImageTk
-import numpy as np
 import ImageProcessing
-import DataManager
 from pdf2image import convert_from_path
 POPPLER_PATH = "C:\\poppler-20.09.0\\bin"
 import docx, os, time

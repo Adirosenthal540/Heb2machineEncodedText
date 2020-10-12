@@ -1,7 +1,5 @@
 import cv2
 import pytesseract
-from matplotlib import pyplot as plt
-import numpy as np
 import datetime
 import jellyfish, os
 try:
@@ -9,7 +7,7 @@ try:
 except ImportError:
     import Image
 from difflib import SequenceMatcher as SQ
-pytesseract.pytesseract.tesseract_cmd =  r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+#pytesseract.pytesseract.tesseract_cmd =  r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 #def calcMatch(realtext, resultText, compare_methods = "jaro winkler"):
 def calcMatch(realtext, resultText, compare_methods = "SQ"):

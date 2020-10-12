@@ -1,0 +1,20 @@
+cv2
+numpy
+os
+math
+pdf2image
+tkinter
+pillow
+pytesseract
+datetime
+jellyfish
+difflib
+
+WINDOWS:
+install poppler for Windows and use pdftoppm.exe as follows:
+
+Download zip file with Poppler's latest binaries/dlls from http://blog.alivate.com.au/poppler-windows/ and unzip to a new folder in your program files folder. For example: "C:\Program Files (x86)\Poppler".
+
+Add "C:\Program Files (x86)\Poppler\poppler-0.68.0\bin" to your SYSTEM PATH environment variable or set the POPPLER_PATH in the config file to your poppler bin file.
+
+From cmd line install pdf2image module -> "pip install pdf2image".

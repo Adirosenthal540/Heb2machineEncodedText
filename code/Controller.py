@@ -3,12 +3,6 @@ from HandwrittenDoc import Check_image_page, ExportHandriteLinesFromScannedDoc
 import DataManager
 import ModelTesseract
 import Main
-from tkinter import messagebox
-import cv2 as cv
-import sys
-import numpy as np
-from matplotlib import pyplot as plt
-import os
 
 
 class Controller():

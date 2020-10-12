@@ -1,0 +1,86 @@
+DATE : 11_10 16_23
+Model : heb4
+
+Validation folder: C:\Users\Adi Rosental\Documents\shecodes_finalProject\models-trained\test_models, length data: 12.0
+
+Algorithem of compare strings : SQ
+
+text: בשמלה אדומה ושתי צמות,
+Output: ר ותן
+Befor: /₪ פ[נוור הו כת ,
+Percent coincidence after train: 20.69%
+diff between befor train and after: 1.18
+
+
+text: אז בואו נשיר". תנו לגדול בשקט בערוגה בכפר.
+Output: בן נר. ערט בערעה הכער.
+Befor: '»/5 פוו (ש”ר? ';ע 4 <%%) הוד ©כפר.
+Percent coincidence after train: 48.48%
+diff between befor train and after: 15.57
+
+
+text: שם תזרח השמש גם מחר תנו לגדול בשקט
+Output: ש תזרח העמל גם נתר ת ‏ י
+Befor: & חברח =0(% ם= ער תע ש *)
+Percent coincidence after train: 60.0%
+diff between befor train and after: 20.66
+
+
+text: ילדה קטנה יחידה ותמה עמדה ושאלה - למה?
+Output: ך ו2 חעד תנה עד לנהר
+Befor: &/?” ק יחסר ת מד הוה- \&\)ף,&[*װ
+Percent coincidence after train: 30.0%
+diff between befor train and after: -11.67
+
+
+text: וכל הרי הגעש וכל הסערות
+Output: ל י ‏ ו היך
+Befor: ) חרי 49 ו הו.
+Percent coincidence after train: 44.44%
+diff between befor train and after: -1.71
+
+
+text: עמדו מזעפם ולא מצאו תשובה.
+Output: רן מללפם ו מע תוד.
+Befor: 1 /₪ ] ₪4\ א,
+Percent coincidence after train: 52.17%
+diff between befor train and after: 37.54
+
+
+text: יונתן הקטן רץ בבוקר אל הגן הוא טיפס על העץ
+Output: תן הקטן ל ור ‏ תן ו 29 וץ
+Befor: עען הן + ספוחר } ן \ ₪ 46
+Percent coincidence after train: 55.07%
+diff between befor train and after: 14.49
+
+
+text: אפרוחים חיפש. אוי ואבוי לו לשובב,
+Output: טערחי חע ן לבן ל לן
+Befor: )פרוח`ס חש. שי \.\וֹיוֹ!' 6\ וֹ!ן&נו'ק\
+Percent coincidence after train: 37.04%
+diff between befor train and after: -6.21
+
+
+text: חור גדול במכנסיו מן העץ התגלגל ועונשו קיבל
+Output: חור גדול במכנלן אן הלן
+Befor: חו ;038 <*4כ(פ ן ו ת>}©} ןי ףאָ
+Percent coincidence after train: 54.55%
+diff between befor train and after: 30.55
+
+
+text: אפונה וגזר ישבו במקרר ויחד עם בטטה התחילו לקטר:
+Output: גפונה לגזר ילפן במקרר ויחד לם בטום התחלן לר.
+Befor: [©פר הפר יש%קו קנקכר וית # 360 יש\ 706 ן
+Percent coincidence after train: 73.12%
+diff between befor train and after: 32.67
+
+
+text: קר לי ברגליים, תדליק ת'מנורה בקיר. כי חושך מצרים,
+Output: קר ל העלים תלך תי מנורה בקיר. כ חך מרם,
+Befor: -} 6 -] #(רד פו. כ השך נ”ט,
+Percent coincidence after train: 60.0%
+diff between befor train and after: 31.79
+
+
+
+mean present : 48.68782691506228

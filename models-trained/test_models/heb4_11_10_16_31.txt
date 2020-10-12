@@ -1,0 +1,79 @@
+DATE : 11_10 16_31
+Model : heb4
+
+Validation folder: C:\Users\Adi Rosental\Documents\shecodes_finalProject\models-trained\test_models, length data: 10.0
+
+Algorithem of compare strings : SQ
+
+text: תומך בתוך בתי הספר. נשלב עובדים
+Output: ן ברוך ביתי השפר נשלב עובדים
+Befor: ה ושכ פה ו, הי רסשר , /% /4 שוףליס
+Percent coincidence after train: 78.69%
+diff between befor train and after: 42.87
+
+
+text: סוציאליים במערך החינוכי, ונפתח תוכניות משלימות
+Output: שוצילים בלרך ה חינוכי, ונפתח תוכניות משלימות
+Befor: וי& /ייס, םע”סר; לחיוכי, וכשרהח ה וכניוה. 6 #ישוה-
+Percent coincidence after train: 89.13%
+diff between befor train and after: 40.15
+
+
+text: בבתי הספר. ניישם צעדים שונים לרווחתם
+Output: בבתי השפר.ניילם צעחים שונים לרווחתתם
+Befor: בפי רסשר , ניי0% 3 שי& %ו(י0 ;רווחה.ס,
+Percent coincidence after train: 86.49%
+diff between befor train and after: 36.49
+
+
+text: של קשישים כמפורט במצע בפרק של
+Output: ש ל קשישים כמפורט במצע בפרק של
+Befor: % ק©%י0 2עשור6 630 פשר? 6%
+Percent coincidence after train: 95.08%
+diff between befor train and after: 59.99
+
+
+text: אזרחים ותיקים. נחוקק חוק שירותי רווחה
+Output: אזר חים ותיקים, נחוקק חוק שירותי רווחה
+Befor: 56רחים וה י?יס , נחוק? חו %ירותי רווסף
+Percent coincidence after train: 93.51%
+diff between befor train and after: 25.97
+
+
+text: שיעגן לראשונה בחקיקה ובאופן מרוכז את
+Output: שעגו לראשונה בחקיקה ובאופו מרוז את
+Befor: 66ו /2ר&%וכר פחקיקה ופפושו ערוכ 3 פה_
+Percent coincidence after train: 88.89%
+diff between befor train and after: 43.56
+
+
+text: זכויותיהם של אנשים עם מוגבלויות בישראל.
+Output: זכויותיהם של אנשים עם מוגבלויות בילראע.
+Befor: 5 יוה יס /; &%06י0 06 שוםף שויוה. פי%ר& /,
+Percent coincidence after train: 92.5%
+diff between befor train and after: 80.45
+
+
+text: החוק נועד לתת מענה לכל אדם
+Output: ה חוק נועף לתת מענה לכל אדם
+Befor: כחוק כוטל /2ה_ה. עשנה /222 096
+Percent coincidence after train: 90.91%
+diff between befor train and after: 56.43
+
+
+text: עם מוגבלות בכל הנוגע לשירותים ולקצבאות
+Output: לם מוגבלות בכל הנוגע לשירותים ולקזבאות
+Befor: 06 שו6ף שוה 2% 2 רנוםט /2 %ירוהיס ו/3?6פפוה.
+Percent coincidence after train: 92.31%
+diff between befor train and after: 56.59
+
+
+text: שהוא זכאי לקבל וכן לשנות את
+Output: ש הוא זכאי לקבל וכן לשנות את
+Befor: *רו& 23פי /שק ף /2 וכו / עוה שפה_
+Percent coincidence after train: 94.74%
+diff between befor train and after: 62.48
+
+
+
+mean present : 90.22364207898025

@@ -3,17 +3,14 @@ import ImageProcessing
 import HandwrittenDoc
 import ModelTesseract
 import DataManager
-#from DataManager import check_database
+import config
 import cv2 as cv
-from PIL import Image
-import sys, numpy as np
-from matplotlib import pyplot as plt
+import numpy as np
 import os, math
 from pdf2image import convert_from_path
 from tkinter import *
 from tkinter import messagebox, filedialog
 from PIL import ImageTk, Image
-from pdf2image.exceptions import PDFInfoNotInstalledError, PDFPageCountError, PDFSyntaxError
 
 def Status_program(i):
     switcher={
@@ -37,13 +34,14 @@ def insertDocuments(i):
         }
     return switcher.get(i, " ")
 
-HELP_TEXT_DOC_CREATE = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\code\help_create.txt"
-HELP_TEXT_DOC_EXTRACT = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\code\help_extract.txt"
+HOME_DIRECTORY = config.get_home_directory()
+HELP_TEXT_DOC_CREATE = os.path.join(HOME_DIRECTORY, "code\help_create.txt")
+HELP_TEXT_DOC_EXTRACT = os.path.join(HOME_DIRECTORY, "code\help_extract.txt")
 IMAGE_WIDTH_TO_SHOW = 600
 IMAGE_HEIGHT_TO_SHOW = 600
 
 INPUT_NUM_TRYS = 2
-POPPLER_PATH = "C:\\poppler-20.09.0\\bin"
+POPPLER_PATH = config.get_poppler_path()
 
 original_image_array_show = []
 images_numpy_array = []
@@ -209,6 +207,7 @@ def userSetLabel(line_images_array, controller):
         print(lines_txt)
         if len(line_images_array) == len(lines_txt):
             newLabeleForTrain = lines_txt
+            countImageGotLabel =  len(lines_txt)
         else:
             newLabeleForTrain = [""] * len(line_images_array)
     else:
@@ -285,7 +284,10 @@ def CheckPDF(file):
 def ExtractImagesFromPDF(file, files):
     global delete_files, writerID
     order = HandwrittenDoc.check_PDF_name(file)
-    images = convert_from_path(file, fmt="jpeg", poppler_path =POPPLER_PATH)
+    if POPPLER_PATH!= None:
+        images = convert_from_path(file, fmt="jpeg", poppler_path =POPPLER_PATH)
+    else:
+        images = convert_from_path(file, fmt="jpeg")
     outputpath, namefile = os.path.split(file)
     i = 0
     for image in images:
@@ -787,6 +789,7 @@ def backward_check():
 
 def exit_program(root):
     root.destroy()
+    exit()
 
 def exit_check_data(root):
     global bad_Images_num, path_list_checkData
@@ -1215,7 +1218,7 @@ def run_program(finishWrop = False, finishEdit = False):
                 if images_path_list == []:
                     popup_message("ERROR NO GOOD FILES TO CREATE DATA - CHECK 'help'", maessage_type(2))
                     exit_program(root)
-                    exit()
+
                 for image_path in images_path_list:
                     image_array = cv.imread(image_path, 0)
                     original_image_array.append(image_array.copy())
@@ -1285,7 +1288,7 @@ def main():
 
     filemenu = Menu(menubar, tearoff=0)
     filemenu.add_separator()
-    filemenu.add_command(label="Exit", command = root.destroy)
+    filemenu.add_command(label="Exit", command = lambda: exit_program(root))
     menubar.add_cascade(label="File", menu=filemenu)
 
     datamenu = Menu(menubar, tearoff=0)

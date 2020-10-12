@@ -1,0 +1,7 @@
+DATE : 11_10 15_45
+Model : heb3
+
+Validation folder: C:\Users\Adi Rosental\Documents\shecodes_finalProject\models-trained\test_models, length data: 12.0
+
+Algorithem of compare strings : SQ
+

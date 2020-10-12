@@ -1,0 +1,114 @@
+DATE : 11_10 19_54
+Model : heb5
+
+Validation folder: C:\Users\Adi Rosental\Documents\shecodes_finalProject\models-trained\test_models, length data: 15.0
+
+Algorithem of compare strings : SQ
+
+text: ואיך שלא אפנה לראות תמיד איתה ארצה
+Output: ואיך שלא אפנה לראות תמיד אתה ארצה
+Befor: ך 6»>| ©(0([₪ /)ה_ 20 ש_ ר ויכ
+Percent coincidence after train: 95.65%
+diff between befor train and after: 74.44
+
+
+text: להיות, שומרת לי היא אמונים לא מסתובבת
+Output: למהיות, שומרת לי היא אמונים לא מחרסתובבת
+Befor: ות ,#122כר/ &י %ש| >]/עאקי© &6| תלתנבלר; _
+Percent coincidence after train: 93.67%
+diff between befor train and after: 68.98
+
+
+text: בגנים. וגם אני בין הבריות לא מתפתה לאחרות.
+Output: בלנים. ו גבו אני בן הבריות לא מתפתה זאחרתת
+Befor: =<© [ = !ע אן מכפכית, 66 הת©תף >!חרת ,
+Percent coincidence after train: 83.72%
+diff between befor train and after: 61.77
+
+
+text: והיא הייתה יפה קצת משונה וגם הכוכבים דולקים
+Output: וה א הייתה יפה קצת השונה וגם הכוכבים דולקים
+Befor: ו) מ”תקב יס ן ?-;_#&(© (6= ף כנכ2י< כופק`ט
+Percent coincidence after train: 93.18%
+diff between befor train and after: 65.6
+
+
+text: על אש קטנה.
+Output: על א רקטנב.
+Befor: + && ת %(=.
+Percent coincidence after train: 75.0%
+diff between befor train and after: 50.0
+
+
+text: תומך בתוך בתי הספר. נשלב עובדים
+Output: תוטכ בתו ביתי הטפר,נשלב עובהים
+Befor: ה ושכ פה ו, הי רסשר , /% /4 שוףליס
+Percent coincidence after train: 76.19%
+diff between befor train and after: 40.37
+
+
+text: סוציאליים במערך החינוכי, ונפתח תוכניות משלימות
+Output: סוציאעיים בעשערכך החירוכי, וכפתח תוכניות גשימת
+Befor: וי& /ייס, םע”סר; לחיוכי, וכשרהח ה וכניוה. 6 #ישוה-
+Percent coincidence after train: 82.98%
+diff between befor train and after: 34.0
+
+
+text: בבתי הספר. ניישם צעדים שונים לרווחתם
+Output: בהיבתי הטספר,ניישם צעהים שונים לרווותם
+Befor: בפי רסשר , ניי0% 3 שי& %ו(י0 ;רווחה.ס,
+Percent coincidence after train: 84.21%
+diff between befor train and after: 34.21
+
+
+text: של קשישים כמפורט במצע בפרק של
+Output: ש השישים כטפורט במצע בפצרה שעץ
+Befor: % ק©%י0 2עשור6 630 פשר? 6%
+Percent coincidence after train: 78.69%
+diff between befor train and after: 43.6
+
+
+text: אזרחים ותיקים. נחוקק חוק שירותי רווחה
+Output: אערחים ותיהים, חוהה חוה שירותי רווחה
+Befor: 56רחים וה י?יס , נחוק? חו %ירותי רווסף
+Percent coincidence after train: 72.0%
+diff between befor train and after: 4.47
+
+
+text: שיעגן לראשונה בחקיקה ובאופן מרוכז את
+Output: שי שאו לראשוכה בחהיהה ובאופו ורוצק את
+Befor: 66ו /2ר&%וכר פחקיקה ופפושו ערוכ 3 פה_
+Percent coincidence after train: 69.33%
+diff between befor train and after: 24.0
+
+
+text: זכויותיהם של אנשים עם מוגבלויות בישראל.
+Output: דכויותיהס ש אכשים עם מוגאהתויות בישראע.
+Befor: 5 יוה יס /; &%06י0 06 שוםף שויוה. פי%ר& /,
+Percent coincidence after train: 80.0%
+diff between befor train and after: 67.95
+
+
+text: החוק נועד לתת מענה לכל אדם
+Output: הרווק רועה לתת מענה לכץ אום
+Befor: כחוק כוטל /2ה_ה. עשנה /222 096
+Percent coincidence after train: 76.36%
+diff between befor train and after: 41.88
+
+
+text: עם מוגבלות בכל הנוגע לשירותים ולקצבאות
+Output: עם אוגב לות בכלע המוגע לצשירותים ולהצבאת
+Befor: 06 שו6ף שוה 2% 2 רנוםט /2 %ירוהיס ו/3?6פפוה.
+Percent coincidence after train: 85.0%
+diff between befor train and after: 49.29
+
+
+text: שהוא זכאי לקבל וכן לשנות את
+Output: שהוא צכזאי להבלוכו שנות את
+Befor: *רו& 23פי /שק ף /2 וכו / עוה שפה_
+Percent coincidence after train: 80.0%
+diff between befor train and after: 47.74
+
+
+
+mean present : 81.73273524006827
