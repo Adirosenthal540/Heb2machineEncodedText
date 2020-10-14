@@ -1,11 +1,12 @@
+from difflib import SequenceMatcher as SQ
+import ImageProcessing
+import config
 from tkinter import *
 import cv2 as cv
 from PIL import Image, ImageTk
-import ImageProcessing
 from pdf2image import convert_from_path
-POPPLER_PATH = "C:\\poppler-20.09.0\\bin"
+POPPLER_PATH = config.get_poppler_path()
 import docx, os, time
-import shutil
 NUMPIXELS = 20
 
 names_of_fonts = []
@@ -15,7 +16,6 @@ def convert_wordDocx_to_x_words_in_line_txtFile(x, doc, outputPathForTextFile):
     for paragraph in doc.paragraphs:
         list_words = paragraph.text.split(" ")
         list_words = [word for word in list_words if word!="" and word!="\n" and word!="\t" and ('\xa0' not in word) and len(word)<18 and len(word)>1]
-        #print(list_words)
         numword = 0
         while numword< len(list_words) and len(list_words)>0:
             line = ""
@@ -36,21 +36,6 @@ def convert_wordDocx_to_x_words_in_line_txtFile(x, doc, outputPathForTextFile):
             print(numword)
 
     f.close
-
-
-# txt_file = open(os.path.join(r"C:\Users\Adi Rosental\Documents\she_code\shecode_final_project\handwriteDoc\trainFonts",  "test_word_file2.txt"), "r",encoding="utf-8")
-# text = txt_file.read()
-# txt_file.close()
-# lines = text.split("\n")
-# list_fonts = ['Guttman Yad-Brush', 'Guttman Yad-Light', 'Dana Yad AlefAlefAlef Normal', 'Tamir', 'Ktav Yad CLM', 'OS Luizi Round_FFC'\
-#               'Liron', "shmuel", "Ben Gurion", "FtPilKahol 1.00", 'Gveret Levin AlefAlefAlef', "Anka CLM"]
-# folder_name = r"C:\Users\Adi Rosental\Documents\she_code\shecode_final_project\handwriteDoc\trainFonts\docx_fonts"
-# for style in list_fonts:
-#     document = docx.Document()
-#     for line in lines:
-#         document.add_paragraph( line , style=style)
-#     document.save(os.path.join(folder_name, 'demo.docx'))
-
 
 # input: folder path with pdf's files
 # output: make a new folder with the fonts name and paste each page of the pdf as an image into the folder
@@ -112,7 +97,7 @@ def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
     folderSave = os.path.join(folder, font_name)
 
     till_page = len(files)
-    print(till_page)
+    print(till_page )
 
     txt_file = open(txtfile, "r" , encoding="utf-8")
     text = txt_file.read()
@@ -137,7 +122,9 @@ def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
         boundries = ImageProcessing.GetLineBounds(imageArray)
         #print(boundries)
         print(len(boundries))
+        thispageSnum = num_lines_images
         num_lines_images += len(boundries)
+
         for i in range(len(boundries)):
             x, y, w, h = boundries[i]
             cutImage = imageArray[max(0, min(y, y+h)-NUMPIXELS):min(max(y, y+h)+NUMPIXELS,height) , max(0, min(x, x+w)-NUMPIXELS) :min(width, max(x, x+w)+NUMPIXELS)]
@@ -145,7 +132,12 @@ def extract_ines_of_text_from_images_and_match_labels(folder, txtfile):
                 num_line+=1
             if num_line<=num_lines_txt-1:
                 Label = lines_txt[num_line]
+                print(Label)
+                #cv.imshow("bb", cutImage)
+                #cv.waitKey(0)
                 num_line += 1
+                print(thispageSnum+i)
+                print(num_line)
                 newImagesForTrain.append(ImageProcessing.ImageProcessing(cutImage, imagePath=None, handwrite_ID=font_name, Label = Label))
     Insert_to_folder(newImagesForTrain, folderSave)
     print(num_line, num_lines_images)
@@ -176,30 +168,51 @@ def extract_ines_of_text_from_image_and_match_label(imageArray, text,fontname, f
     Insert_to_folder(newImagesForTrain, folderSave)
 
 
+
+
 def main():
     # doc = docx.Document(r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts\hebrew_text2-cahol_lavan.docx")
     # outputPathForTextFile = r"C:\Users\Adi Rosental\Documents\shecode_final_project\handwriteDoc\trainFonts"
     #
     # convert_wordDocx_to_x_words_in_line_txtFile(6, doc, os.path.join(outputPathForTextFile,  "test_word_file21.txt"))
     #
-    # folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont"
+    # folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\fontsForTrain\nagla3"
     # convert_pdf_to_tif_images(folder)
-
-    txtfile = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\2.txt"
-    folderSave = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\chani2"
+    # #
+    # txtfile = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\2.txt"
+    # folderSave = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\chani2"
     # folder = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont"
     # files = os.listdir(folder)
     # for file in files:
     #     if file[-8:] == "_images_":
-    #         print(file)
-    #         extract_ines_of_text_from_images_and_match_labels(os.path.join(folder, file), txtfile)
+    #          print(file)
+    # txtfile = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\fontsForTrain\nagla3\fonts_text.txt"
+    # extract_ines_of_text_from_images_and_match_labels(r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\fontsForTrain\nagla3\fonts_text3_images_", txtfile)
     #
-    imageArray = cv.imread(r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\chani2_1.tif", 0)
-    txt_file = open(txtfile, "r" , encoding="utf-8")
-    text = txt_file.read()
-    txt_file.close()
-    extract_ines_of_text_from_image_and_match_label(imageArray, text,"chani2", folderSave)
-
+    # imageArray = cv.imread(r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\fonts\chaniFont\chani2_images_\chani2_1.tif", 0)
+    # txt_file = open(txtfile, "r" , encoding="utf-8")
+    # text = txt_file.read()
+    # txt_file.close()
+    # extract_ines_of_text_from_image_and_match_label(imageArray, text,"chani2", folderSave)
+    text1 = "ואיך שלא אפנה לראות  תמיד איתה ארצה\
+\n    להיות, שומרת לי היא אמונים לא מסתובבת\
+\n    בגנים. וגם אני בין הבריות לא מתפתה לאחרות.\
+\n    והיא הייתה יפה קצת משונה וגם הכוכבים דולקים\
+\n    על אש קטנה.\
+\n    תשירו שיר לשלום אל תלחשו תפילה\
+\n    שלומית בונה סוכה מוארת וירוקה על כן היא עסוקה\
+    "
+    text2 = "ואיך שלא אופנה לראות תמיד אתה ארצה\
+\n    להיות, שומרת לי ה4ן אלמונים עטו מסתובבת\
+\n    ג הבריות לא מתפתה לאחרת.\
+\n    \
+\n    והא בייתה יפה קלת משונה ועם הכוכבים דולקים\
+\n    אש קטנב\
+\n    \
+\n    תשירו שה לשלום אל תלחשו תפשה\
+\n    שלומתבונה סוכה מויות וירקה לעל כן הש עשקה\
+    "
+    print(calcMatchLine(text1, text2))
 if __name__ == "__main__":
     main()
 

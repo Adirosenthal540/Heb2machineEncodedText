@@ -7,19 +7,41 @@ try:
 except ImportError:
     import Image
 from difflib import SequenceMatcher as SQ
-#pytesseract.pytesseract.tesseract_cmd =  r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-#def calcMatch(realtext, resultText, compare_methods = "jaro winkler"):
-def calcMatch(realtext, resultText, compare_methods = "SQ"):
-    if compare_methods == "jaro winkler":
-        result_score = jellyfish.jaro_winkler_similarity(realtext, resultText) * 100
-    elif compare_methods == "SQ":
-        result_score = SQ(None, realtext, resultText).ratio() * 100
-    print (compare_methods)
-    return result_score
+#def calcMatch(realtext, resultText, compare_methods = "SQ"):
+#    # if compare_methods == "jaro winkler":
+#    #     result_score = jellyfish.jaro_winkler_similarity(realtext, resultText) * 100
+#   elif compare_methods == "SQ":
+#    result_score = calcMatchLine(realtext, resultText)
+
+#    return result_score
+
+
+def calcMatch(textTrue, textResult):
+    textTrue_lines = textTrue.split("\n")
+    print(textTrue_lines)
+    textResult_lines = textResult.split("\n")
+    print(textResult_lines)
+    num_lineTrue = 0
+    num_lineResult = 0
+    sum_score = 0
+    count = 1
+    while num_lineTrue != len(textTrue_lines) and num_lineResult != len(textResult_lines):
+        while textResult_lines[num_lineResult] == "" or textResult_lines[num_lineResult] == " " and num_lineResult != len(textResult_lines) - 1:
+            num_lineResult += 1
+        print(textResult_lines[num_lineResult])
+        print(textTrue_lines[num_lineTrue])
+        print(num_lineTrue)
+        print(num_lineResult)
+        print(SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100)
+        sum_score += SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100
+        count += 1
+        num_lineTrue+=1
+        num_lineResult+=1
+    return sum_score / (count-1)
 
 class ModelTesseract:
-    def __init__(self, modelName = "heb6"):
+    def __init__(self, modelName = "heb7"):
         self.acuracy = 0
         self.lang = modelName
 
@@ -40,10 +62,6 @@ class ModelTesseract:
 
         cv2.imshow('img', img)
         cv2.waitKey(0)
-
-    def CalcAcuracy(self):
-        result = 0
-        self.acuracy = result
 
 
     def Check_model_tesseract(self, folder_validation, folder_output_txtfile, psm=7, compare_methods = "SQ"):
@@ -71,8 +89,8 @@ class ModelTesseract:
                 txt_file = open(os.path.join(folder_validation, file[:-4] + ".gt.txt"), "r", encoding="utf-8")
                 realText = txt_file.read()
                 txt_file.close()
-                result_score = calcMatch(realText, resultText, compare_methods)
-                result_score_befor_train = calcMatch(realText, resultText_before, compare_methods)
+                result_score = calcMatch(realText, resultText)
+                result_score_befor_train = calcMatch(realText, resultText_before)
 
                 diff = result_score - result_score_befor_train
                 sum_dif+=diff
@@ -86,3 +104,4 @@ class ModelTesseract:
         print("mean:"+str(sum / count))
         print("mean improve fron 'heb': "+str(sum_dif / count))
         file_to_save.close()
+        self.acuracy = sum / count

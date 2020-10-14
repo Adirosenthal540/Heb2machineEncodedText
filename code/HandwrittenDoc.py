@@ -57,15 +57,6 @@ def Check_image_name(image_path):
     else:
         return True
 
-# def FindLabelForBound(self, yMin, yMax, bound, page):
-#     image = self.pages[page]
-#     heightLine = int((yMax - yMin) / MAXNUMLINES)
-#     yMiddleBorder = bound[1] + bound[3] * 0.5
-#     for line in range(MAXNUMLINES+1):
-#         if (yMin + heightLine * line) <= yMiddleBorder and (yMin + heightLine * (line+1) > yMiddleBorder):
-#             return self.FindLabelForLine(page, line)
-#             #cv.line(image, (0, yMin + heightLine * i), (image.shape[1], yMin + heightLine * i), (0, 0, 255), 5)
-#     return -1
 
 def FindSquaresHandwriteDoc(image):
     thresh = cv.threshold(image, 160, 255, cv.THRESH_BINARY_INV)[1]
@@ -124,38 +115,6 @@ def ExportHandriteLinesFromScannedDoc(image, pageNum):
         newImagesForTrain.append(ImageProcessing(cutImage, imagePath = None, Label = Label, handwrite_ID = image.handwrite_ID))
 
     return newImagesForTrain
-
-# def GetLineBounds(imageArray):
-#     lineBounds = []
-#     minValImage = np.amin(imageArray, axis=1)
-#     height = imageArray.shape[0]
-#     width = imageArray.shape[1]
-#     smallThanTHRESHOLDTIGHT = minValImage < THRESHOLDTIGHT
-#     row = 1
-#     startL = 0
-#     endL = 0
-#     imgCopy = imageArray.copy()
-#     while row < height:
-#         while smallThanTHRESHOLDTIGHT[row]:
-#             if smallThanTHRESHOLDTIGHT[row - 1] == False:
-#                 startL = row
-#             if smallThanTHRESHOLDTIGHT[row + 1] == False:
-#                 endL = row
-#             row += 1
-#         if (smallThanTHRESHOLDTIGHT[row - 1] == True):
-#             if endL - startL <= MINPIXELLETTER:
-#                 row += 1
-#                 continue
-#             else:
-#                 lineBounds.append((startL, endL))
-#                 cv.line(imgCopy, (0,startL), (0,endL), 0, 5)
-#                 cv.line(imgCopy, (0,startL), (width,startL), 0, 5)
-#                 cv.line(imgCopy, (0,endL), (width,endL), 0, 5)
-#         row += 1
-#     cv.imshow("line bounds image", imgCopy)
-#     cv.waitKey(0)
-#
-#     return lineBounds
 
 class HandwrittenDic():
     def __init__(self):

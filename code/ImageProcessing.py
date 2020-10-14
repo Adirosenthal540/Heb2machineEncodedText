@@ -1,10 +1,9 @@
 import numpy as np
 import cv2 as cv
-from matplotlib import pyplot as plt
-import sys, math
+import math
 
 PIXEL_REMOVE = 0
-THRESHOLDTIGHT = 140
+THRESHOLDTIGHT = 180
 MINPIXELLETTER = 10 # MIN PIXEL NUM FOR LETTER \ LINE
 
 def reorder(myPoints):
@@ -55,35 +54,16 @@ def WrapImage(img, points):
     # cv.waitKey(0)
     return imgWarp
 
-
-# def WrapImage(img, points):
-#     imgContour = img.copy()
-#     points = reorder(points)
-#     width = img.shape[1]
-#     height = img.shape[0]
-#     pts1 = np.float32(points)  # PREPARE POINTS FOR WARP
-#
-#     pts2 = np.float32([[0, 0], [width, 0], [0, height], [width, height]])  # PREPARE POINTS FOR WARP
-#     matrix = cv.getPerspectiveTransform(pts1, pts2)
-#     imgWarp = cv.warpPerspective(img, matrix, (width, height))
-#     imgWarp = removePixelsEdge(imgWarp, PIXEL_REMOVE)
-#     # cv.imshow("wrop Image", imgWarp)
-#     # cv.waitKey(0)
-#     return imgWarp
-
-
 def GetLineBounds(img):
     lineBounds = []
     minValImage = np.amin(img, axis=1)
     smallThanTHRESHOLDTIGHT = minValImage < THRESHOLDTIGHT
-    print(len(smallThanTHRESHOLDTIGHT))
     row = 1
     startL = 0
     endL = 0
     imgCopy = img.copy()
     width = img.shape[1]
     height = img.shape[0]
-    print (height)
     while row < height-1:
         while smallThanTHRESHOLDTIGHT[row] and row < height-1:
             if smallThanTHRESHOLDTIGHT[row - 1] == False:
@@ -105,7 +85,6 @@ def GetLineBounds(img):
                 cv.line(imgCopy, (0,startL), (width,startL), 0, 5)
                 cv.line(imgCopy, (0,endL), (width,endL), 0, 5)
         row += 1
-
     return lineBounds
 
 
@@ -132,11 +111,6 @@ class ImageProcessing():
         self.imageArray = cv.resize(self.imageArray, (width, height))
         return self.imageArray
 
-    def RotateImage(self):
-        pass
-
-
-
     def FindLines(self, img):
         edges = cv.Canny(img, 50, 150, apertureSize=3)
         cv.imshow("edges", edges)
@@ -149,10 +123,6 @@ class ImageProcessing():
         cv.imshow("image", img)
         cv.waitKey(0)
         cv.destroyAllWindows()
-
-
-
-
 
     def FindLetterBoundsInLine(self,img, startLine, endLine):
         letterBounds = []

@@ -1,0 +1,934 @@
+DATE : 14_10 13_11
+Model : heb9
+
+Validation folder: C:\Users\Adi Rosental\Documents\shecodes_finalProject\models-trained\test_models, length data: 132.0
+
+Algorithem of compare strings : SQ
+
+text: בשמלה אדומה ושתי צמות,
+Output: בנ מנר או דומה ונשתי צמות,
+Befor: = 42 4 1ה־ ©|לואה (/%0 ב2צוות-,
+Percent coincidence after train: 76.0%
+diff between befor train and after: 50.55%
+
+
+text: ילדה קטנה, יחידה ותמה
+Output: לדה קטנה, יחיצה ותמה
+Befor: /ה ק₪₪6ה, יסיפה ותאה '
+Percent coincidence after train: 88.37%
+diff between befor train and after: 30.59%
+
+
+text: וארטיק וסוכריות ותות גינה
+Output: וטורטיק מזוכריות. ותאעת צינה
+Befor: \ס\ר&יווֹ \©\כלי\ת. |ת\ת. ©י(ה
+Percent coincidence after train: 72.73%
+diff between befor train and after: 37.64%
+
+
+text: אני אוהב ימי הולדת ושקיות עם דברים טובים
+Output: למני גאוהבימי הולדר ושקיו- זזן צברים וב
+Befor: \ע פוה קס יאי הוּוגת. \שזי\ת. במ 5©לי₪ ס\כ,.ק
+Percent coincidence after train: 74.07%
+diff between befor train and after: 46.49%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: כי חושך מצרים, א: ב ואן ננשיר
+Befor: כי סושך )ז3כ'ח;סוצ סו6ון (שיר "י'
+Percent coincidence after train: 83.33%
+diff between befor train and after: 39.58%
+
+
+text: תנו לגדול בשקט בלי לקפוא מקור
+Output: תנ לגדף בשקס בלי לקפוא מבור
+Befor: ט (36) 0 ₪© 5] ]₪20| אקור
+Percent coincidence after train: 82.76%
+diff between befor train and after: 57.76%
+
+
+text: רק קצת זבל, מים וגם אור.
+Output: רק קצת זבל, אים וגם גוור
+Befor: ק 257_ 5ם/ , אי ו|688 פו.
+Percent coincidence after train: 84.0%
+diff between befor train and after: 40.86%
+
+
+text: עמדה ושאלה – למה?
+Output: ממוצה ושאלה : למהז
+Befor: אכה (ש6/ה - צמה 2
+Percent coincidence after train: 70.27%
+diff between befor train and after: 25.83%
+
+
+text: אפונה וגזר, ישבו בתוך מחבט.
+Output: טופונה וזזר, ינשבו כממוך מחבל.
+Befor: ©|©ו₪ |&95, ישק\ כ<וךף א680.
+Percent coincidence after train: 74.58%
+diff between befor train and after: 35.98%
+
+
+text: ויחד עם בטטה רצו להיות לבד
+Output: ליםד עם בוסטרד רצן להמאת לבדי
+Befor: /ימ 8% ס סס6ף 9\ (היןות ]8 3
+Percent coincidence after train: 66.67%
+diff between befor train and after: 30.95%
+
+
+text: אך שוד ושבר, מישהו גפרור מדליק
+Output: אך שוד ושבר, מישהו גפרור מצליק :
+Befor: 6ו שור |ושקל, אישמו פמ אמיך |
+Percent coincidence after train: 90.62%
+diff between befor train and after: 54.56%
+
+
+text: ושמן מכל עבר, זה לא מצחיק!
+Output: וישמן מכל זבר, זה לא מצחיק
+Befor: ושאן א5} ר , >ק ) א3סין !
+Percent coincidence after train: 88.89%
+diff between befor train and after: 43.61%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: דדי חונ למצרים, לן: ם וגו, נזיר .
+Befor: כ" ח\ט&ך )`!3(־'קו 45|6 כװ;װ ע,סי\' ו\.
+Percent coincidence after train: 62.5%
+diff between befor train and after: 36.79%
+
+
+text: רוץ בן סוסי, רוץ ודהר! רוץ בביקעה, טוס בהר!
+Output: רול זן סוסי, חו ודקרו רוד בזיקרה, טוס בהר,
+Befor: ש פן סופי, מ וד! ווד ממים ר , 6 מאו
+Percent coincidence after train: 75.86%
+diff between befor train and after: 30.86%
+
+
+text: רוצה, טוסה, יום וליל – פרש אני ובן חיל!
+Output: רוצה, טוסה, יום ולול - פרש אז ובן חחו
+Befor: ופק , סוסה, י[ תי - ©לש ©\פ (סן ם] !
+Percent coincidence after train: 82.05%
+diff between befor train and after: 37.9%
+
+
+text: אני רץ. אני חייב להספיק כל מה שהעולם מציע
+Output: אנ כץ. אנ חיב להספק ל מה שהעלם אצץ
+Befor: וע לף. 5וע חים [הקספק © א ש%8₪/₪ 368
+Percent coincidence after train: 80.52%
+diff between befor train and after: 40.01%
+
+
+text: כל זמן שהאוויר מגיע וזה לא מפריע ומלטף אותי.
+Output: כל צמן שהאמיור מגי ו לא מפרץ ומלטל אוות.. ז
+Befor: 2) >₪ן כטוי אפיפר 8 0\ אפמף װ\תנ& ות , 2
+Percent coincidence after train: 76.4%
+diff between befor train and after: 48.5%
+
+
+text: ויש אצלך אור, למה לי לעצור.
+Output: נויש אצד גמך., למהלי לפצור.
+Befor: |י© 5316( =ף , ][א? ]\ 961 .
+Percent coincidence after train: 71.43%
+diff between befor train and after: 43.36%
+
+
+text: וכל הרי הגעש וכל הסערות
+Output: ו כלהרי העעש וכל הזערור
+Befor: (כ] הרי הץצדש |2] ה ס&טית_
+Percent coincidence after train: 79.17%
+diff between befor train and after: 28.19%
+
+
+text: אני יודע אני זז וזה פוגע, בלב שלי יש חור
+Output: גטוניידצז55 ולה פוגץ, בלב של, יש חור :
+Befor: 6וע 5%© 5%6 55 וע פוץד, /ם / ©!י 'שדחור 8
+Percent coincidence after train: 67.5%
+diff between befor train and after: 24.13%
+
+
+text: שאי אפשר לסגור ואני רץ...
+Output: שאי אפשר לגגור וא: רץ.י
+Befor: שי 6ו ער ]6פור (וע (3...
+Percent coincidence after train: 80.0%
+diff between befor train and after: 29.02%
+
+
+text: לי ולך, לי ולך, לי ולך.
+Output: לי ע ,לו ללך, לוץ. ,
+Befor: 1 ו}ן ! תךף, ©? ין. |
+Percent coincidence after train: 48.89%
+diff between befor train and after: 18.45%
+
+
+text: בהצלחה באימון!
+Output: בהצלחה באימע י
+Befor: / הב ]חה ©&6ויאון !
+Percent coincidence after train: 73.33%
+diff between befor train and after: 27.62%
+
+
+text: עמדו מזעפם ולא מצאו תשובה.
+Output: עמצו מצעצפם ולא מצאו תשובה.
+Befor: או א> 603 ן] א03 תשוקפה.
+Percent coincidence after train: 87.27%
+diff between befor train and after: 48.81%
+
+
+text: הוא טיפס על העץ אפרוחים חיפש
+Output: הוא טיפס ץ הבעץץ אפרוחים חיש.
+Befor: ן 6900 ! מ7 &(©לוחי© חימ02 `
+Percent coincidence after train: 84.75%
+diff between befor train and after: 53.71%
+
+
+text: אוי ואבוי לו לשובב, חור גדול במכנסיו
+Output: אוי ואבוי לן לובב, חור גדל בומכשיו
+Befor: ©|י |6ופוי !\ ] שוה8, מור &3/ פ©אכנסי\
+Percent coincidence after train: 86.11%
+diff between befor train and after: 41.37%
+
+
+text: מן העץ התגלגל ועונשו קיבל
+Output: מן העץ התגלגף ושפזו קיםב
+Befor: אן תד ?-&& ושפו ₪
+Percent coincidence after train: 78.43%
+diff between befor train and after: 42.07%
+
+
+text: אני אוהב שוקולד ועוגות גבינה
+Output: זוני זמוהב נטוקול ד וצחגות גבינב
+Befor: ©וכ וק ש©וקו37 |(חטות- ט פנ
+Percent coincidence after train: 70.97%
+diff between befor train and after: 28.86%
+
+
+text: ואיך שלא אפנה לראות תמיד איתה ארצה
+Output: ואיך שליו טופנה צלראעת תמיך איתמר ארצר
+Befor: ך 6»>| ©(0([₪ /)ה_ 20 ש_ ר ויכ
+Percent coincidence after train: 75.68%
+diff between befor train and after: 54.46%
+
+
+text: להיות, שומרת לי היא אמונים לא מסתובבת
+Output: לצדילות:. זו מררת זי בהיו אל מויים, זאו נמסתובבה,.
+Befor: ות ,#122כר/ &י %ש| >]/עאקי© &6| תלתנבלר; _
+Percent coincidence after train: 33.71%
+diff between befor train and after: 9.02%
+
+
+text: בגנים. וגם אני בין הבריות לא מתפתה לאחרות.
+Output: בז נ. לגב אי בן הדבריות. לא נעתשתב לזאחרכרר:
+Befor: =<© [ = !ע אן מכפכית, 66 הת©תף >!חרת ,
+Percent coincidence after train: 65.91%
+diff between befor train and after: 43.96%
+
+
+text: והיא הייתה יפה קצת משונה וגם הכוכבים דולקים
+Output: להא ביית יפהקדת משונד וצם הכוןבבים דולקיב
+Befor: ו) מ”תקב יס ן ?-;_#&(© (6= ף כנכ2י< כופק`ט
+Percent coincidence after train: 76.74%
+diff between befor train and after: 49.16%
+
+
+text: על אש קטנה.
+Output: על לא קלנב.
+Befor: + && ת %(=.
+Percent coincidence after train: 66.67%
+diff between befor train and after: 41.67%
+
+
+text: אבגדהוזחטיכלעפצקרשתףץןךם
+Output: אל בגד הוצרלטו כלעפדקרש תתלן כו
+Befor: 56 וצכ 6י כ6!?פ3ךר% ת,קוּץ* ( ? א
+Percent coincidence after train: 56.14%
+diff between befor train and after: 52.75%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתףץןךם
+Output: אדגדבן זחטיל מנסעפכקרעתץץןך
+Befor: &2&8לן[6 מ0י© ₪ [&©94כירות-++| ף =
+Percent coincidence after train: 67.86%
+diff between befor train and after: 58.33%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתץףןךם
+Output: א בגדהוזהט ירלמנבעשזקרסת ללך , לי
+Befor: /2} גר וכ ה) וֹ&ע[ס%ק%\;%?( 2 ₪
+Percent coincidence after train: 54.84%
+diff between befor train and after: 38.17%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתץףןךם
+Output: א בגדהו זחטיכזמ סעדהרשתלףלוךם
+Befor: ;/כ&?װע%?&!װלוֹךפ%?\%;}/),02;
+Percent coincidence after train: 68.97%
+diff between befor train and after: 62.07%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתףץןךם
+Output: ט בג דהוזחט לע : ל
+Befor: /2 נר ( ה© `ך5נ,(וֹכ;5ך30קר,%ר;-7}}”`?" \ 2 ₪
+Percent coincidence after train: 42.55%
+diff between befor train and after: 29.04%
+
+
+text: בשמלה אדומה ושתי צמות,
+Output: במשמלה אדומה ושת: זצמור
+Befor: שע ר =[ ב וע- (%ת1 /5 עות_ |
+Percent coincidence after train: 80.85%
+diff between befor train and after: 53.93%
+
+
+text: ילדה קטנה, יחידה ותמה
+Output: יל דר קטנה, ומידה ותמה
+Befor: ם 73(6(7, יתי ות אף
+Percent coincidence after train: 80.0%
+diff between befor train and after: 41.9%
+
+
+text: עמדה ושאלה – למה?
+Output: צמדה ושאלהי למהך :
+Befor: (©.ו] - 4 2=4 |
+Percent coincidence after train: 70.27%
+diff between befor train and after: 52.62%
+
+
+text: וכל הרי הגעש וכל הסערות
+Output: וכל הרי הסעא וכל הסעררר
+Befor: וכ) %רי %©1.0 (& 40 כת_
+Percent coincidence after train: 79.17%
+diff between befor train and after: 41.67%
+
+
+text: עמדו מזעפם ולא מצאו תשובה.
+Output: ד מדו מצעפם ולא מצון תמובה
+Befor: אוה 807598 ון 34] - %(%ף
+Percent coincidence after train: 77.78%
+diff between befor train and after: 54.7%
+
+
+text: יונתן הקטן רץ בבוקר אל הגן
+Output: ונתן הקאן רץ בבוקר אול הגו
+Befor: יוע <ף| <% <<ור 0 ם\
+Percent coincidence after train: 85.19%
+diff between befor train and after: 47.69%
+
+
+text: הוא טיפס על העץ אפרוחים חיפש
+Output: הונן ליפס על העד אפרוחים היפג
+Befor: הע ©י99 41 #ד >|©מקיה ה 20
+Percent coincidence after train: 77.97%
+diff between befor train and after: 52.97%
+
+
+text: אוי ואבוי לו לשובב, חור גדול במכנסיו
+Output: אוי ואבו לו לנאובב, חור גדהל במכזו
+Befor: ני ו[ 4\ & %\8=, חור 3%©% 48כ =\
+Percent coincidence after train: 83.33%
+diff between befor train and after: 46.19%
+
+
+text: מן העץ התגלגל ועונשו קיבל
+Output: מן בעף התגלג ולמ ננ קיב
+Befor: אן ו9 %וה&]1 (ח % ן י<ש
+Percent coincidence after train: 68.0%
+diff between befor train and after: 44.0%
+
+
+text: אני אוהב שוקולד ועוגות גבינה
+Output: אני אוהב שוקולד ועוגת גבינר
+Befor: ע &(ר< ©עור (חנות ז?י(ר 1
+Percent coincidence after train: 91.23%
+diff between befor train and after: 62.14%
+
+
+text: וארטיק וסוכריות ותות גינה
+Output: ומרליק וסוכריות ותות בינר
+Befor: ך (פוכר`\א_ ותנת_ םי(ר
+Percent coincidence after train: 80.77%
+diff between befor train and after: 39.95%
+
+
+text: אני אוהב ימי הולדת ושקיות עם דברים טובים
+Output: אני אוה בימ. הולדת ועק ות ע צבירים אבים
+Befor: =( >&0?* עי װ\צל( ושן ק +- ב אריט ₪6 י
+Percent coincidence after train: 79.01%
+diff between befor train and after: 44.01%
+
+
+text: ואת השמש ואת הירח וגם כמה כוכבים.
+Output: מיותך אמץ ואת הירה קבצםכמה כוכבים.
+Befor: ת_ 14% ו=/ת_ ליכה (8 כאחר כו(כפי₪ .
+Percent coincidence after train: 69.57%
+diff between befor train and after: 23.85%
+
+
+text: אפונה וגזר ישבו במקרר 
+Output: אנקונה וגזר ישבו במקרר
+Befor: *]%( |&נר יש\ & אסררר
+Percent coincidence after train: 86.96%
+diff between befor train and after: 51.4%
+
+
+text: ויחד עם בטטה התחילו לקטר:
+Output: ויח4עם בטטה התהחילו לקטר
+Befor: (ית3 = 9802 יתתנ\ ור6ה
+Percent coincidence after train: 86.27%
+diff between befor train and after: 78.11%
+
+
+text: "קר לי ברגליים, תדליק ת'מנורה בקיר,
+Output: יקר ד ב רבלים, חצליק תי מננרה בקיר,
+Befor: װקר 8\ ק,ך,%}ו\ם'ן [ךאַו? רכ,אַערװ. ק\\-».\,ן
+Percent coincidence after train: 72.22%
+diff between befor train and after: 50.27%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: כי חוצד מ ערים, אז בסוו ל
+Befor: כי תוש א #, _\4_ ג \\ ג,\וּ”\ו.\
+Percent coincidence after train: 67.86%
+diff between befor train and after: 29.76%
+
+
+text: תנו לגדול בשקט בערוגה בכפר.
+Output: תת: לגדה בשקץ בערופה הכפר
+Befor: ־ג ע_ ])2?־”\.8 0,\\9 מסלורוכר תכפכ,
+Percent coincidence after train: 70.37%
+diff between befor train and after: 51.91%
+
+
+text: שם תזרח השמש גם מחר
+Output: נלם חזרה העיםש גז מחר
+Befor: ת3_רה ה0%© &6 היה
+Percent coincidence after train: 61.9%
+diff between befor train and after: 30.33%
+
+
+text: תנו לגדול בשקט בלי לקפוא מקור
+Output: תני ל2 דול ב שקט בלי לקפמו מקור
+Befor: יו 5 ₪ =` ₪974 #ער
+Percent coincidence after train: 83.87%
+diff between befor train and after: 55.3%
+
+
+text: רק קצת זבל, מים וגם אור.
+Output: רק קדת זבל, מ.ם וגםאר
+Befor: כן 23 3©, י& |;=-ר.
+Percent coincidence after train: 80.85%
+diff between befor train and after: 45.3%
+
+
+text: אפונה וגזר, ישבו בתוך מחבט.
+Output: מופונה וגזר, ישבו בתוך מחבהל
+Befor: ש וסכר, י0<ו קי( את?©.
+Percent coincidence after train: 84.21%
+diff between befor train and after: 44.99%
+
+
+text: ויחד עם בטטה רצו להיות לבד
+Output: יחד עם בלזה רדן עהות לבד
+Befor: ”חל 61 0%.י כ 2%&_;0%%
+Percent coincidence after train: 73.08%
+diff between befor train and after: 61.08%
+
+
+text: אך שוד ושבר, מישהו גפרור מדליק
+Output: אק. שעוד ושבר, מיעהו גברור מדליק
+Befor: = /3 ( %דר, אי 0ו ©פכור אמ ף
+Percent coincidence after train: 84.38%
+diff between befor train and after: 41.04%
+
+
+text: ושמן מכל עבר, זה לא מצחיק!
+Output: ושמן מכז עבר, לה לא מצחיק. :
+Befor: (%א\ 99©% 6024 ) אנחילי |
+Percent coincidence after train: 82.14%
+diff between befor train and after: 55.73%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: ני לושך מדרים,5 בנאן נשירי
+Befor: כי חשן אגניא,5% %טן ([%כ”.
+Percent coincidence after train: 66.67%
+diff between befor train and after: 31.58%
+
+
+text: רוץ בן סוסי, רוץ ודהר! רוץ בביקעה, טוס בהר!
+Output: רי בן סוסין רוד דהרו רוץ בדיקלה, אוס בהרן
+Befor: כו פן סופי, \ (מור\ םו ם ר , 96 %פר|
+Percent coincidence after train: 76.74%
+diff between befor train and after: 29.83%
+
+
+text: רוצה, טוסה, יום וליל – פרש אני ובן חיל!
+Output: רו דה, טוסה, יום וליל - סרש אני ובו חילן
+Befor: כול, ) וסה יא 10 - פ\ =|(. (\ ק !
+Percent coincidence after train: 83.95%
+diff between befor train and after: 40.71%
+
+
+text: אני רץ. אני חייב להספיק כל מה שהעולם מציע
+Output: ו רץ. א לייך לה ספ יד כל מה ש הלולם מציץ
+Befor: 0 ר).צ](; קי ס© ף 2 עאד ש חו© *63#*
+Percent coincidence after train: 74.7%
+diff between befor train and after: 56.75%
+
+
+text: כל זמן שהאוויר מגיע וזה לא מפריע ומלטף אותי.
+Output: כל זמן שזהאוור מגיע וזה לא מהרץ ומלטף את.
+Befor: כ 5ין ר יש וכי & ע9כ+© (»})) - 2
+Percent coincidence after train: 87.36%
+diff between befor train and after: 51.46%
+
+
+text: ויש אצלך אור, למה לי לעצור.
+Output: ויש אדלך אור, למהלי לפפור.
+Befor: וי©=(נן »ר, } אל י 355(,
+Percent coincidence after train: 83.64%
+diff between befor train and after: 45.9%
+
+
+text: אני יודע אני זז וזה פוגע, בלב שלי יש חור
+Output: אני נודד נ5ז וזה פוגץ, הזב שלי יש חור
+Befor: = ונד ! 55 (ע פוסה, מפ ם שי 40 חוכ
+Percent coincidence after train: 78.48%
+diff between befor train and after: 41.64%
+
+
+text: שאי אפשר לסגור ואני רץ...
+Output: שמי אהר לסגור וא רץ.
+Befor: ₪ 5% 291 ו ו[ .
+Percent coincidence after train: 76.6%
+diff between befor train and after: 48.02%
+
+
+text: בים הרוגע השמש שוקע למי מתגעגע
+Output: בים הרוגץ השמא עוקע למי מתברגד
+Befor: פי פכואד 94%0& .ן 4%` ית& 161
+Percent coincidence after train: 77.42%
+diff between befor train and after: 67.58%
+
+
+text: לי ולך, לי ולך, לי ולך.
+Output: לי ףזו לי ולך ולי ללך,
+Befor: 4 ,י ך ,י ן,
+Percent coincidence after train: 72.34%
+diff between befor train and after: 34.5%
+
+
+text: בהצלחה באימון!
+Output: בהדרדהה באימון ו ך
+Befor: מירכ\ת ף הן \ |
+Percent coincidence after train: 58.82%
+diff between befor train and after: 45.92%
+
+
+text: איך אני מחברת את הקבצים ביחד? האם
+Output: ע אן. מחברת את הבדב ביחדד היז
+Befor: זין( נסצהת & הה 1308 ₪
+Percent coincidence after train: 65.62%
+diff between befor train and after: 34.05%
+
+
+text: הסיפור שלי הוא קצת מוזר
+Output: ה סיפור שלי הוא קצת מוזר
+Befor: פלפיפור &6&י שן ת כת אופר
+Percent coincidence after train: 93.88%
+diff between befor train and after: 45.88%
+
+
+text: על בחורה שלא מזמן הכרתי
+Output: צל ב חורהל, הזםן הכרת,י
+Befor: }"5 2 חוכ־ 6%_\ #כ!יו\ ה כ רתי
+Percent coincidence after train: 66.67%
+diff between befor train and after: 33.94%
+
+
+text: ואיתה אני הולך לבר כל לילה
+Output: טוותה יוני הועך עבר כל ליער
+Befor: ותי (+ הש ר 42 364
+Percent coincidence after train: 69.09%
+diff between befor train and after: 29.96%
+
+
+text: והיא הייתה יפה קצת משונה
+Output: והנ היתה יפה קדת משוור
+Befor: \0%/ מ”ת = `9© קנת_ ט שו-
+Percent coincidence after train: 75.0%
+diff between befor train and after: 39.71%
+
+
+text: תומך בתוך בתי הספר. נשלב עובדים
+Output: תומך, בתוך ביתי הפר, נשלב עובהים
+Befor: ה ושכ פה ו, הי רסשר , /% /4 שוףליס
+Percent coincidence after train: 86.15%
+diff between befor train and after: 50.33%
+
+
+text: סוציאליים במערך החינוכי, ונפתח תוכניות משלימות
+Output: לוצייאעייי במערך ה חינוכי, ונפתח תוכניות משעימור
+Befor: וי& /ייס, םע”סר; לחיוכי, וכשרהח ה וכניוה. 6 #ישוה-
+Percent coincidence after train: 85.42%
+diff between befor train and after: 36.44%
+
+
+text: בבתי הספר. ניישם צעדים שונים לרווחתם
+Output: ביבתי הספר,. ניי שם צעהים שונים לרווחתז
+Befor: בפי רסשר , ניי0% 3 שי& %ו(י0 ;רווחה.ס,
+Percent coincidence after train: 88.31%
+diff between befor train and after: 38.31%
+
+
+text: של קשישים כמפורט במצע בפרק של
+Output: של קשישים כמפורט במצע בפרק שף
+Befor: % ק©%י0 2עשור6 630 פשר? 6%
+Percent coincidence after train: 93.33%
+diff between befor train and after: 58.25%
+
+
+text: אזרחים ותיקים. נחוקק חוק שירותי רווחה
+Output: אזרחים ותיקים. נחוקה חוך שירותי רווחר
+Befor: 56רחים וה י?יס , נחוק? חו %ירותי רווסף
+Percent coincidence after train: 89.47%
+diff between befor train and after: 21.94%
+
+
+text: שיעגן לראשונה בחקיקה ובאופן מרוכז את
+Output: שיעזו לראשונה בחקיקה ובאופו מרוכ עד
+Befor: 66ו /2ר&%וכר פחקיקה ופפושו ערוכ 3 פה_
+Percent coincidence after train: 82.19%
+diff between befor train and after: 36.86%
+
+
+text: זכויותיהם של אנשים עם מוגבלויות בישראל.
+Output: זכויותיהם של: אנשים עם אוגבלויות בישראלף.
+Befor: 5 יוה יס /; &%06י0 06 שוםף שויוה. פי%ר& /,
+Percent coincidence after train: 92.68%
+diff between befor train and after: 80.63%
+
+
+text: החוק נועד לתת מענה לכל אדם
+Output: ה חוק נועד לתת אענה לכל אהב
+Befor: כחוק כוטל /2ה_ה. עשנה /222 096
+Percent coincidence after train: 83.64%
+diff between befor train and after: 49.15%
+
+
+text: עם מוגבלות בכל הנוגע לשירותים ולקצבאות
+Output: עם מאוגבלות בכל הנוגע לשירותים ולהצב אות
+Befor: 06 שו6ף שוה 2% 2 רנוםט /2 %ירוהיס ו/3?6פפוה.
+Percent coincidence after train: 92.5%
+diff between befor train and after: 56.79%
+
+
+text: שהוא זכאי לקבל וכן לשנות את
+Output: ש הוא צזכאי לקבל וכן לשנוות
+Befor: *רו& 23פי /שק ף /2 וכו / עוה שפה_
+Percent coincidence after train: 85.71%
+diff between befor train and after: 53.46%
+
+
+text: ישראל היא הבית הלאומי של העם
+Output: ף שך אל קיא קהית רלאואי של רקעם
+Befor: *&ו )) ו©6) ולית %)&ו/י ©&) וק
+Percent coincidence after train: 68.85%
+diff between befor train and after: 42.19%
+
+
+text: היהודי וישראל היא הבית של כולנו
+Output: דיקוצי וישראל היא ההית של כולנ,
+Befor: ווי (/*©&ו )) ו©6 וי9 &} כו}(ו
+Percent coincidence after train: 81.25%
+diff between befor train and after: 49.5%
+
+
+text: בין מזרחים לאשכנזים ובין דתיים לחילונים
+Output: הין מצרחים לאשכנצים והין צתיים לחילונים
+Befor: ?י| #אפו0+ק )&&כ5/5+*ק ופי| 3ת**ק }ק+}ו(יק
+Percent coincidence after train: 85.0%
+diff between befor train and after: 60.9%
+
+
+text: הולך וגדל המרחק בין מרכז לפריפריה
+Output: דולך ולדל הערחךק הדין ערכצץ לקריקריר
+Befor: ו ©6%) הווהך לין ורכ6 }ריוריוֹ
+Percent coincidence after train: 67.61%
+diff between befor train and after: 21.45%
+
+
+text: בין שמאל לימין ובין אדם לאדם
+Output: הין שמאל לימין והין אדם לאצם
+Befor: ?י*י| &6#) }יאוין ופי| &5ק })&56ק
+Percent coincidence after train: 86.21%
+diff between befor train and after: 54.46%
+
+
+text: ישנה שחיקה מדאיגה באמון כלפי מוסדות
+Output: י שנה שחיקה מצאילה האמון כלקי מוסדור
+Befor: *©&/ר ©&קיןוֹ #/65)*=ו %&און כ}%י אווסכות
+Percent coincidence after train: 82.19%
+diff between befor train and after: 46.29%
+
+
+text: המדינה ושומרי החוק וחל כרסום מתמיד
+Output: ק מצינה ושומרי החוך וחל כרסום מתמיד
+Befor: 1 ו&ואורי וּקוך ו) כוסוק ותאיכ
+Percent coincidence after train: 87.32%
+diff between befor train and after: 53.99%
+
+
+text: בהיקף השירותים הציבוריים הניתנים לאזרחי ישראל
+Output: ה היקךץ ק שירותים הקציהוריים הניתנים לאצרחי ישרא
+Befor: נוֹוּץ/ז %ו*רות*יק 3%יפורייק %/*יתנ[+יק }&פוק* *&ו &}
+Percent coincidence after train: 82.11%
+diff between befor train and after: 46.11%
+
+
+text: ובאיכותם הגיעה השעה לאחד את ישראל
+Output: וד אינותם רליערך השלרה לאהחך את ישרא
+Befor: ו?&*כוענק ויוו ו& נו )3506 96 *&ו&}
+Percent coincidence after train: 70.42%
+diff between befor train and after: 44.71%
+
+
+text: מחדש ולהבטיח את עתידה מפלגת כחול לבן
+Output: מחדש ולקהטיח את עתידה מקללת כחול להן
+Befor: /0 /}09%י0 6פת גפיכוֹ /2508 כקו} })פ|
+Percent coincidence after train: 86.49%
+diff between befor train and after: 57.15%
+
+
+text: מושתתת על שלושה יסודות מרכזיים ביטחון
+Output: מו שתתת על שלושך יסוצות מרנציים היטחון
+Befor: או& ננת ;) ©&}ו&ו *סוכות #/ו55**ק פיסחון
+Percent coincidence after train: 83.12%
+diff between befor train and after: 45.14%
+
+
+text: אל מול הסכנות והאתגרים סביבנו נעמיד
+Output: אל מול הסכנות ודך אמתלזרים סהיהנו וצמיד
+Befor: )) וו} %ו0כנות וו 6)ת2>ויק %0*פנו (}#ויכ
+Percent coincidence after train: 76.32%
+diff between befor train and after: 34.76%
+
+
+text: אנחנו אוהבים אותה גאים בה ומחויבים
+Output: אנחנן אורהים אותך לזאים הך ומחויהים
+Befor: &6/ק/ו &וופ?*יק &6&ותו #&יק לוּ ווקויפיק
+Percent coincidence after train: 78.87%
+diff between befor train and after: 39.4%
+
+
+text: אגרוף ברזל נגד חורשי רעתנו לצד
+Output: אזרוף הרצל נז חורשי רלתוו לכד
+Befor: )&וו” לו0) /&3 קור&י ופנו })53
+Percent coincidence after train: 72.13%
+diff between befor train and after: 33.42%
+
+
+text: זאת נפעל בתבונה ובאחריות כדי למצות
+Output: 2 את נקעל התהונה והדאחריות כצי למצור
+Befor: 5 /) לנגפונו ופ &קרויות כ55+ }#כות
+Percent coincidence after train: 75.0%
+diff between befor train and after: 29.29%
+
+
+text: כל סיכוי למשא ומתן אפקטיבי בשיתוף
+Output: כל סיכוי למשא ומתן אהקטיפי השיתוע
+Befor: כ} 0+*כו* }#&& וגתן %6ן6י%* פ &יגו”
+Percent coincidence after train: 85.29%
+diff between befor train and after: 48.15%
+
+
+text: הגורמים המתונים בעולם הערבי ובמדינות המערך
+Output: דגורמים המתונים העולם הלרהי והמציוור דעערק
+Befor: וֹורויק וּ#נתו/י*יק לגו}ק ווגרפי ופוּ5י(ות ו//װי־,
+Percent coincidence after train: 67.44%
+diff between befor train and after: 46.17%
+
+
+text: לשמור על דמותה ועל זהותה כמדינה
+Output: ל שמוך צל דמותה ועל צהותך כמצינר
+Befor: }&אוור ;) כאות%ו וג) כוּותו כוּ5י/ו
+Percent coincidence after train: 76.92%
+diff between befor train and after: 35.75%
+
+
+text: יהודית ודמוקרטית באופן מוחלט ישראל 
+Output: יהוצית ודמוקרטית האוקן מוחלט ישראן
+Befor: *%ו/וכית וכאוןרסית %&ו| אוק}0 *&ו&}
+Percent coincidence after train: 84.51%
+diff between befor train and after: 45.62%
+
+
+text: היא מדינה חזקה ומשגשגת אבל ישראל
+Output: דיא מצינה חצקה ומשלשזת אדל ישראעל
+Befor: ו) /#אכינר #כו |/#&&&96 %6) *&ן6}
+Percent coincidence after train: 77.61%
+diff between befor train and after: 56.72%
+
+
+text: היא גם מדינה שסועה וכואבת
+Output: קיא לם מצינך שסונד וכו אהר
+Befor: ו& 5ק #וכ5י/ר &0וגוֹ וכו&פ(
+Percent coincidence after train: 64.15%
+diff between befor train and after: 34.52%
+
+
+text: הארץ טובה אך נושבת בה רוח
+Output: ךארץ טודרד אק נשרת הד רוה
+Befor: וו} סופו ק /& לו ווה
+Percent coincidence after train: 65.38%
+diff between befor train and after: 61.13%
+
+
+text: רעה הולך ומעמיק הפער בין יהודים
+Output: ר לה הולך ועעמיק הקער הין ירודים
+Befor: רגוֹ וק הוי וֹוור לי| *וֹוכיק
+Percent coincidence after train: 80.0%
+diff between befor train and after: 54.19%
+
+
+text: ללא יהודים בין אמידים ללא אמידים
+Output: לל ‏ יקוצים הין אמידים ללא אמידים
+Befor: } *30%יק פי| 6&#יגיק }}& &#יכיק
+Percent coincidence after train: 83.58%
+diff between befor train and after: 58.97%
+
+
+text: אני רוצה לאכול גלידה
+Output: אני ריוצה לאכול גליהד
+Befor: ( רוכה אכת #] פ-
+Percent coincidence after train: 88.37%
+diff between befor train and after: 46.27%
+
+
+text: אני רוצה לאכול גלידה
+Output: אנו דיוצה לאכול גלי הר
+Befor: (ו רוכה שטכו 4# פה
+Percent coincidence after train: 77.27%
+diff between befor train and after: 32.27%
+
+
+text: הסיפור שלי הוא קצת מוזר
+Output: ה סיפור שזי הוא קצת מוכזר :
+Befor: פ©סיפור ©&י / ן תקכת האופר -
+Percent coincidence after train: 84.62%
+diff between befor train and after: 31.79%
+
+
+text: על בחורה שלא מזמן הכרתי
+Output: על ב חורהרש מזמן הכרק,
+Befor: } מ חוכר© 4%\ ופה\ = כ רתי
+Percent coincidence after train: 76.6%
+diff between befor train and after: 33.46%
+
+
+text: ואיתה אני הולך לבר כל לילה
+Output: מוחה אני הויך עבר כל עליצר
+Befor: בת »\+ הש אר 2& ₪4
+Percent coincidence after train: 70.37%
+diff between befor train and after: 39.94%
+
+
+text: והיא הייתה יפה קצת משונה
+Output: והנן הייתהר יפה קור מ עיונר
+Befor: \08( מח”ק ד `©ר?,ר\'נ(ר( א;ף\כל
+Percent coincidence after train: 67.92%
+diff between befor train and after: 57.4%
+
+
+text: משהו שאני כותב בכתב יד
+Output: מ שהיןצעאוני צוחב בבכתב יךד
+Befor: מו - & סותס ‏ סכתס !/?
+Percent coincidence after train: 66.67%
+diff between befor train and after: 23.19%
+
+
+text: משהו שאני כותב בכתב יד
+Output: מאדו שאת בותם כנתב וד
+Befor: #% - &_ סהמ ככה2 /2
+Percent coincidence after train: 48.89%
+diff between befor train and after: 30.28%
+
+
+text: משהו שאני כותב בכתב יד
+Output: מ-זדי שאני כוקק עף וד
+Befor: \ .\ &[ כת נסע /
+Percent coincidence after train: 53.33%
+diff between befor train and after: 23.33%
+
+
+text: משהו שאני כותב בכתב יד
+Output: מ שהיף צאני זבוחב בבתב יו
+Befor: א %ו / &]/ / פותס / סכתס ! 3
+Percent coincidence after train: 65.31%
+diff between befor train and after: 30.69%
+
+
+text: משהו שאני כותב בכתב יד
+Output: מיהך שלי הקב בזקקר קד
+Befor: א \ ₪ ב ת \
+Percent coincidence after train: 48.89%
+diff between befor train and after: 14.6%
+
+
+text: ואיך שלא אפנה לראות תמיד איתה ארצה
+Output: וליך שלףזו גועפנה לכאף ת מיציאיתה אורצבר
+Befor: ף 666| ©(0[© /-_ 1=8- 6|רכ₪
+Percent coincidence after train: 65.79%
+diff between befor train and after: 53.09%
+
+
+text: להיות, שומרת לי היא אמונים לא מסתובבת
+Output: לדית., 4ו מררר: לי זהיו מומונים לאן מסתנביר-
+Befor: באות_ , 2 אמה_ &- ©.\ -!את/י© &06 הלתנאתר_
+Percent coincidence after train: 67.47%
+diff between befor train and after: 42.78%
+
+
+text: .בגנים. וגם אני בין הבריות לא מתפתה לאחרות.
+Output: בזצנים. וגב אי בן ודבריות לא נעתפתה זאחר:
+Befor: 8 ].6. ום= -!ע פן םכיע_ 1=6 הת©ת &[ח תש
+Percent coincidence after train: 74.42%
+diff between befor train and after: 41.09%
+
+
+text: והיא הייתה יפה קצת משונה וגם הכוכבים דולקים
+Output: והי היחב יפהקצת משונב וצם ה כו כבים דוגקיב
+Befor: ו) מ”ת= יס \37-; #& ו(ר (©= 9%כ(כ6-8 ל©ק`6
+Percent coincidence after train: 78.16%
+diff between befor train and after: 43.68%
+
+
+text: על אש קטנה.
+Output: על א קלוז:
+Befor: נ 25] ין ©(©.
+Percent coincidence after train: 52.17%
+diff between befor train and after: 29.1%
+
+
+text: תשירו שיר לשלום אל תלחשו תפילה
+Output: מנצירן יצ. לשלום אל תלהחנצו תפיפהר
+Befor: ין ©ל7 06%6 >© ₪94\ תפיע
+Percent coincidence after train: 69.7%
+diff between befor train and after: 37.55%
+
+
+text: שלומית בונה סוכה מוארת וירוקה על כן היא עסוקה
+Output: נשלו לחית בונה סוכה מויורת וירקה לל כן הכן עלוקהד
+Befor: 86ו אית. תו(ף סוכף ו(- ויסקוה ₪ כן ©ש| טקד
+Percent coincidence after train: 79.17%
+diff between befor train and after: 27.48%
+
+
+text: אני רוצה לאכול גלידה
+Output: אנו ריוצה לאכול גלי דד
+Befor: ש(י רובכה כו 4# פ
+Percent coincidence after train: 81.82%
+diff between befor train and after: 35.66%
+
+
+
+mean present : 75.71869197426079
+mean present : 42.77805496314057

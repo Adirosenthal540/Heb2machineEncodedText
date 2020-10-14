@@ -1,15 +1,19 @@
 import ModelTesseract
+import config
+import os
 try:
     from PIL import Image
 except ImportError:
     import Image
 
 # set variable:
-compare_methods = 'jaro winkler'
-lang = "heb3"
-folder_output_txtfile = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\models-trained\test_models"
-folder_validation = r"C:\Users\Adi Rosental\Documents\shecodes_finalProject\data\validation"
+lang = "heb10"
+compare_methods = "SQ"
+
+HOME_DIRECTORY = config.get_home_directory()
+folder_output_txtfile = os.path.join(HOME_DIRECTORY, "models-trained\\test_models")
+folder_validation = os.path.join(HOME_DIRECTORY, "data\\validation")
 psm=6
 
 tessract = ModelTesseract.ModelTesseract(lang)
-tessract.Check_model_tesseract(folder_validation, folder_output_txtfile, psm=7, compare_methods = "SQ")
+tessract.Check_model_tesseract(folder_validation, folder_output_txtfile, psm=7, compare_methods = compare_methods)

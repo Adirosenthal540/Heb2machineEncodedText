@@ -459,7 +459,7 @@ def hide_image():
 
 def slide_threshold(image_array, root):
     global imageTK_, my_image_label, choosenImage, horizontal, btn_dilation, btn_opening, btn_closing, choosenImage_originsize
-    global my_label2, horizontal2, btn_THRESH_BINARY_uper, images_numpy_array
+    global my_label2, horizontal2, btn_THRESH_BINARY_uper, images_numpy_array, btn_removeNoise, btn_erosion
 
     _, th = cv.threshold(image_array, horizontal.get(), 255, cv.THRESH_BINARY)
     choosenImage_originsize = images_numpy_array[0].copy()
@@ -484,6 +484,8 @@ def slide_threshold(image_array, root):
     btn_dilation = Button(root, text = "dilation", command = lambda: dilation(root)).grid(row = 4, column = 3)
     btn_opening = Button(root, text = "opening", command = lambda: opening(root)).grid(row = 4, column = 2)
     btn_closing = Button(root, text = "closing", command = lambda: closing(root)).grid(row = 4, column = 1)
+    btn_removeNoise = Button(root, text = "remove noise", command = lambda: removeNoise(root)).grid(row = 3, column = 1)
+    btn_erosion = Button(root, text="erosion", command=lambda: erosion(root)).grid(row=3, column=2)
 
 def get_original(root):
     global my_image_label, original, imageTK_, choosenImage, choosenImage_originsize, images_numpy_array, top_edit
@@ -524,10 +526,10 @@ def dilation(root):
     global my_image_label, original, imageTK_, choosenImage, btn_dilation, choosenImage_originsize, top_edit
     image_array = choosenImage.copy()
     kernal = np.ones((2, 2), np.uint8)
-    dilation = cv.dilate(image_array, kernal, iterations=3)
+    dilation = cv.dilate(image_array, kernal, iterations=1)
 
     choosenImage_originsize = cv.dilate(choosenImage_originsize, kernal, iterations=3)
-
+    image_array = dilation.copy()
     width, height = calculate_width_height(image_array, IMAGE_WIDTH_TO_SHOW, IMAGE_HEIGHT_TO_SHOW)
     image_array = cv.resize(image_array, (width, height))
 
@@ -536,16 +538,15 @@ def dilation(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 4, column = 3)
+    #btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 4, column = 3)
 
 def opening(root):
     global my_image_label, original, imageTK_, choosenImage, btn_dilation, btn_opening, choosenImage_originsize, top_edit
     image_array = choosenImage.copy()
-    kernal = np.ones((2, 2), np.uint8)
+    kernal = np.ones((3, 3), np.uint8)
     opening = cv.morphologyEx(image_array, cv.MORPH_OPEN, kernal)
     choosenImage_originsize = cv.morphologyEx(choosenImage_originsize, cv.MORPH_OPEN, kernal)
-
-
+    image_array = opening.copy()
     width, height = calculate_width_height(image_array, IMAGE_WIDTH_TO_SHOW, IMAGE_HEIGHT_TO_SHOW)
     image_array = cv.resize(image_array, (width, height))
     choosenImage = image_array.copy()
@@ -553,7 +554,7 @@ def opening(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 4, column = 2)
+    #btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 4, column = 2)
 
 def closing(root):
     global my_image_label, original, imageTK_, choosenImage, btn_closing, choosenImage_originsize, top_edit
@@ -561,7 +562,7 @@ def closing(root):
     kernal = np.ones((2, 2), np.uint8)
     closing = cv.morphologyEx(image_array, cv.MORPH_CLOSE, kernal)
     choosenImage_originsize = cv.morphologyEx(choosenImage_originsize, cv.MORPH_CLOSE, kernal)
-
+    image_array = closing.copy()
     width, height = calculate_width_height(image_array, IMAGE_WIDTH_TO_SHOW, IMAGE_HEIGHT_TO_SHOW)
     image_array = cv.resize(image_array, (width, height))
     choosenImage = image_array.copy()
@@ -569,11 +570,42 @@ def closing(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 4, column = 1)
+    #btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 4, column = 1)
+
+def removeNoise(root):
+    global my_image_label, original, imageTK_, choosenImage, btn_removeNoise, choosenImage_originsize, top_edit
+    image_array = choosenImage.copy()
+    remove_noise = cv.medianBlur(image_array, 3)
+    choosenImage_originsize = cv.medianBlur(choosenImage_originsize, 3)
+    image_array = remove_noise.copy()
+    width, height = calculate_width_height(image_array, IMAGE_WIDTH_TO_SHOW, IMAGE_HEIGHT_TO_SHOW)
+    image_array = cv.resize(image_array, (width, height))
+    choosenImage = image_array.copy()
+    image_fromarray = Image.fromarray(image_array)
+    imageTK_ = ImageTk.PhotoImage(image_fromarray)
+    my_image_label = Label(root, image=imageTK_)
+    my_image_label.grid(row=1, column=0, rowspan = 5)
+    #btn_removeNoise = Button(root, text = "remove noise", command = lambda: removeNoise(root)).grid(row = 3, column = 1)
+
+def erosion(root):
+    global my_image_label, original, imageTK_, choosenImage, btn_removeNoise, choosenImage_originsize, top_edit, btn_erosion
+    image_array = choosenImage.copy()
+    kernal = np.ones((2, 2), np.uint8)
+    erode = cv.erode(image_array, kernal, iterations=1)
+    choosenImage_originsize = cv.medianBlur(choosenImage_originsize, 3)
+    image_array = erode.copy()
+    width, height = calculate_width_height(image_array, IMAGE_WIDTH_TO_SHOW, IMAGE_HEIGHT_TO_SHOW)
+    image_array = cv.resize(image_array, (width, height))
+    choosenImage = image_array.copy()
+    image_fromarray = Image.fromarray(image_array)
+    imageTK_ = ImageTk.PhotoImage(image_fromarray)
+    my_image_label = Label(root, image=imageTK_)
+    my_image_label.grid(row=1, column=0, rowspan=5)
+    #btn_erosion = Button(root, text="erosion", command=lambda: erosion(root)).grid(row=3, column=2)
 
 def userChooseTresholds(image_array, root):
     global horizontal, choosenImage, choosenImage_originsize, original, my_image_label, imageTK_, get_original_button
-    global btn_dilation, btn_opening, btn_closing, top_edit, images_numpy_array, btn_THRESH_BINARY_uper
+    global btn_dilation, btn_opening, btn_closing, top_edit, images_numpy_array, btn_THRESH_BINARY_uper, btn_removeNoise, btn_erosion
 
     horizontal = Scale(root, from_ =  0, to =  255, orient = HORIZONTAL)
     horizontal.grid(row = 1, column = 2)
@@ -604,6 +636,8 @@ def userChooseTresholds(image_array, root):
     btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 4, column = 3)
     btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 4, column = 2)
     btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 4, column = 1)
+    btn_removeNoise = Button(root, text = "remove noise", state = DISABLED).grid(row = 3, column = 1)
+    btn_erosion = Button(root, text = "erosion", state = DISABLED).grid(row = 3, column = 2)
     get_original_button = Button(root, text = "click to original", command = lambda: get_original(root), width = 25).grid(row = 5, column = 1, columnspan = 3)
     save_image_button = Button(root, text="Click here to run program on this image", command=save_edit_image).grid(row=8, column=0, columnspan = 4)
     root.mainloop()
@@ -1143,8 +1177,10 @@ def insertresult():
 def calcMatch(result):
     global root_compare, insert_real_text, compare_label, userInserLabel
     userInserLabel = insert_real_text.get("1.0",END)
-    precentMatckh = ModelTesseract.calcMatch(userInserLabel, result)
-    compare_label = Label(root_compare, text="The match precent according similarity - "+str(round(precentMatckh,2))+"%",
+    print(userInserLabel)
+    print(result)
+    precentMatch = ModelTesseract.calcMatch(userInserLabel, result)
+    compare_label = Label(root_compare, text="The match precent according similarity - "+str(round(precentMatch,2))+"%",
                     bg="steel blue", font=("Ariel", 16), fg = "red",bd = 5, width=50, anchor = CENTER)
     compare_label.grid(row = 6, column = 0, columnspan = 3)
     compare_label = Button(root_compare, text="Want to insert your true label into database?",

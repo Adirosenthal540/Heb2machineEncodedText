@@ -10,7 +10,7 @@ MINPERCENT = 25
 
 # *** The data is combination of TIF image (tif) of one line of text and txt Image (gt.txt) which is the lable of the image
 # *** The name of the tif and the matching txt file should be the same - becouse there are lot of diffrent handwrite
-# *** the user will insert his own ID and the name of each image will be calculate from uniqe ID of the image (integer)
+# *** the user will insert his own ID and the name of each image in database will be calculate from uniqe ID of the image (integer)
 # *** and the user ID - like: 1-316550797.tif, 1-316550797.gt.txt, 2-316550797.tif, 2-316550797.gt.txt etc.
 
 HOME_DIRECTORY = config.get_home_directory()
