@@ -7,7 +7,8 @@ except ImportError:
     import Image
 
 # set variable:
-lang = "heb10"
+lang = "heb12"
+compare_model = "heb7"
 compare_methods = "SQ"
 
 HOME_DIRECTORY = config.get_home_directory()
@@ -16,4 +17,4 @@ folder_validation = os.path.join(HOME_DIRECTORY, "data\\validation")
 psm=6
 
 tessract = ModelTesseract.ModelTesseract(lang)
-tessract.Check_model_tesseract(folder_validation, folder_output_txtfile, psm=7, compare_methods = compare_methods)
+tessract.Check_model_tesseract(folder_validation, folder_output_txtfile, psm=7, compare_methods = compare_methods, compare_model= compare_model)

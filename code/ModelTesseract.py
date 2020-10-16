@@ -29,11 +29,11 @@ def calcMatch(textTrue, textResult):
     while num_lineTrue != len(textTrue_lines) and num_lineResult != len(textResult_lines):
         while textResult_lines[num_lineResult] == "" or textResult_lines[num_lineResult] == " " and num_lineResult != len(textResult_lines) - 1:
             num_lineResult += 1
-        print(textResult_lines[num_lineResult])
-        print(textTrue_lines[num_lineTrue])
-        print(num_lineTrue)
-        print(num_lineResult)
-        print(SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100)
+        #print(textResult_lines[num_lineResult])
+        #print(textTrue_lines[num_lineTrue])
+        #print(num_lineTrue)
+        #print(num_lineResult)
+        #print(SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100)
         sum_score += SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100
         count += 1
         num_lineTrue+=1
@@ -64,7 +64,7 @@ class ModelTesseract:
         cv2.waitKey(0)
 
 
-    def Check_model_tesseract(self, folder_validation, folder_output_txtfile, psm=7, compare_methods = "SQ"):
+    def Check_model_tesseract(self, folder_validation, folder_output_txtfile, psm=7, compare_methods = "SQ", compare_model = "heb"):
         time = datetime.datetime.now()
         lang_trained = self.lang
         file_to_save = open(os.path.join(folder_output_txtfile, lang_trained + time.strftime("_%d_%m_%H_%M") + ".txt"), "w",
@@ -74,6 +74,7 @@ class ModelTesseract:
         files = os.listdir(folder_validation)
         file_to_save.write("Validation folder: " + folder_output_txtfile + ", length data: " + str(len(files) / 2) + "\n\n")
         file_to_save.write("Algorithem of compare strings : " + compare_methods + "\n\n")
+        file_to_save.write("compare to model : " + compare_model + "\n\n")
         sum = 0
         sum_dif = 0
         count = 0
@@ -83,7 +84,7 @@ class ModelTesseract:
                 resultText = pytesseract.image_to_string(img, lang=lang_trained, config='--psm ' + str(
                     psm))  # make sure to change your `config` if different
                 resultText.replace("\n", "")
-                resultText_before = pytesseract.image_to_string(img, lang="heb", config="--psm " + str(
+                resultText_before = pytesseract.image_to_string(img, lang=compare_model, config="--psm " + str(
                     psm))  # make sure to change your `config` if different
 
                 txt_file = open(os.path.join(folder_validation, file[:-4] + ".gt.txt"), "r", encoding="utf-8")

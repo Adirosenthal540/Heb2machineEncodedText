@@ -1,1 +1,1 @@
-num images in database : 258
+num images in database : 379

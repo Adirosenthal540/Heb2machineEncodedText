@@ -273,6 +273,14 @@ def CheckImage(file):
     else:
         return True
 
+# check if the path has chars in hebrew
+def checkPath(path):
+    for chr in path:
+        if ord(chr) > 1488 and ord(chr) < 1514:
+            popup_message("Error - the path has chars in hebrew", maessage_type(2))
+            return False
+    return True
+
 def CheckPDF(file):
     ext = os.path.splitext(file)[1]
     if ext.lower() =='.pdf':
@@ -333,20 +341,21 @@ def deleteFiles():
     delete_files = []
 
 def openFolder():
-    global frame_scanned_label, folder_selected, frame, root, mark_Button, run_Button, frameMarkRun, selectfolder_Button
+    global frame_scanned_label, folder_selected, frame, root, run_Button, frameMarkRun, selectfolder_Button
     frameMarkRun = Frame(root,  bg= "steel blue")
     frameMarkRun.grid(row=5, column=0, columnspan=2)
 
     selectfolder_Button = Button(frame_scanned_label, text="Open Folder with your scanned pages (PDF \ Image formats)",
-                                 font=("Ariel,12"), bg = "medium sea green", width=45, padx=10, pady=20, command=openFolder)
+                                 font=("Ariel,12"), bg = "medium sea green", width=45, padx=10, pady=20, state = DISABLED)
     selectfolder_Button.grid(row=1, column=0, columnspan=2)
 
     root.withdraw()
     folder_selected = filedialog.askdirectory()
     root.deiconify()
+    if not checkPath(folder_selected):
+        Select_train_test(0)
     mylabel_folder = Label(frame_scanned_label, text=folder_selected,  bg= "steel blue")
     mylabel_folder.grid(row=2, column=0, columnspan = 2)
-    #mark_Button = Button(frameMarkRun, text="Mark the text", command=Popup_Mark_the_text).grid(row=0, column=0, columnspan = 2)
     run_Button = Button(frameMarkRun, text = "RUN", command = run_program, font=("Ariel,14"),width = 40, pady=5).grid(row=1, column=0, columnspan = 2)
 
 
@@ -368,7 +377,7 @@ def enterID():
 
 
 def clicked_Radiobutton(value):
-    global frame, frame_scanned_label, folder_selected, open_image_Button
+    global frame, frame_scanned_label, folder_selected, open_image_Button, images, Radiobutton1, Radiobutton2
     global folder_selected, scannedInsertDocuments, frameExtract, frameMarkRun, e, selectfolder_Button
     images = []
     frameMarkRun.destroy()
@@ -391,10 +400,12 @@ def clicked_Radiobutton(value):
         open_image_Button = Button(frame_scanned_label, text="Open Image of your handwrite ", font=("Ariel,12"), width = 40, pady=20, command=get_image)
         open_image_Button.grid(row=1, column=0, columnspan=2)
 
+    Radiobutton1 = Radiobutton(frame, text = "Scanned handwrite images",  bg= "steel blue",font = ("Ariel", 12), value = 0, state = DISABLED)
+    Radiobutton2 = Radiobutton(frame, text = "Create your labeled handwrite data",  bg= "steel blue", font = ("Ariel", 12), value = 1, state = DISABLED)
+    Radiobutton1.grid(row=3, column=0)
+    Radiobutton2.grid(row=3, column=1)
     e = Entry(frame_scanned_label, width=40, borderwidth=5)
     enterIDLabel = Label(frame_scanned_label, text="Enter writer ID :", fg="black",font=("Ariel,10"), bg = "steel blue", width=15, padx=10, pady=10,)
-
-
     enterIDLabel.grid(row=3,column = 0, sticky = "e")
     e.grid(row=3, column=1)
     mainloop()
@@ -413,10 +424,9 @@ def chooseScannedOrLabeled():
     myLabel = Label(frame, text="Colecting data for training tesseract",  bg= "steel blue", font = ("Ariel", 14))
     Radiobutton1 = Radiobutton(frame, text = "Scanned handwrite images",  bg= "steel blue",font = ("Ariel", 12), variable = r, value = 0, command = lambda:clicked_Radiobutton(r.get()))
     Radiobutton2 = Radiobutton(frame, text = "Create your labeled handwrite data",  bg= "steel blue", font = ("Ariel", 12), variable = r, value = 1, command = lambda:clicked_Radiobutton(r.get()))
-
-    myLabel.grid(row=0, column=0, columnspan =2)
     Radiobutton1.grid(row=3, column=0)
     Radiobutton2.grid(row=3, column=1)
+    myLabel.grid(row=0, column=0, columnspan =2)
     frame.mainloop()
 
 # show the image that was selecr=ted for "extract text" process
@@ -538,7 +548,6 @@ def dilation(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    #btn_dilation = Button(root, text = "dilation", state = DISABLED).grid(row = 4, column = 3)
 
 def opening(root):
     global my_image_label, original, imageTK_, choosenImage, btn_dilation, btn_opening, choosenImage_originsize, top_edit
@@ -554,7 +563,6 @@ def opening(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    #btn_opening = Button(root, text = "opening", state = DISABLED).grid(row = 4, column = 2)
 
 def closing(root):
     global my_image_label, original, imageTK_, choosenImage, btn_closing, choosenImage_originsize, top_edit
@@ -570,7 +578,6 @@ def closing(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    #btn_closing = Button(root, text = "closing", state = DISABLED).grid(row = 4, column = 1)
 
 def removeNoise(root):
     global my_image_label, original, imageTK_, choosenImage, btn_removeNoise, choosenImage_originsize, top_edit
@@ -585,7 +592,6 @@ def removeNoise(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan = 5)
-    #btn_removeNoise = Button(root, text = "remove noise", command = lambda: removeNoise(root)).grid(row = 3, column = 1)
 
 def erosion(root):
     global my_image_label, original, imageTK_, choosenImage, btn_removeNoise, choosenImage_originsize, top_edit, btn_erosion
@@ -601,7 +607,6 @@ def erosion(root):
     imageTK_ = ImageTk.PhotoImage(image_fromarray)
     my_image_label = Label(root, image=imageTK_)
     my_image_label.grid(row=1, column=0, rowspan=5)
-    #btn_erosion = Button(root, text="erosion", command=lambda: erosion(root)).grid(row=3, column=2)
 
 def userChooseTresholds(image_array, root):
     global horizontal, choosenImage, choosenImage_originsize, original, my_image_label, imageTK_, get_original_button
@@ -651,7 +656,7 @@ def EditImage():
 
 
 def get_image():
-    global root, frame, clicked, options, flag_show, frameExtract, mark_Button, frameMarkRun, imageTK_list, images_path_list, open_image_Button
+    global root, frame, clicked, options, flag_show, frameExtract, frameMarkRun, imageTK_list, images_path_list, open_image_Button, insert_image_button
     global original_image_array, images_numpy_array, images_numpy_array_show, show_image_button, hide_image_button, original_image_array_show, isTrain
     images_path_list = []
     imageTK_list = []
@@ -665,12 +670,17 @@ def get_image():
     frameExtract.grid(row=5, column=0, columnspan=2)
 
     if status_program == Status_program(0):
-        open_image_Button = Button(frame_scanned_label, text="Open Image of your handwrite ",font=("Ariel,12"),width = 40, padx=10, pady=20, command=get_image, bg = "medium sea green", bd = 5, relief = RIDGE)
+        open_image_Button = Button(frame_scanned_label, text="Open Image of your handwrite ",font=("Ariel,12"),width = 40,
+                                   padx=10, pady=20, state = DISABLED, bg = "medium sea green", bd = 5, relief = RIDGE)
         open_image_Button.grid(row=1,column = 0, columnspan=2)
     else:
-        insert_image_button = Button(frame, text="Open image", command=get_image, bg = "medium sea green",font=("Ariel,12"),width = 40, bd = 5, relief = RIDGE, padx=10, pady=20).grid(row=2, column=0, columnspan=2)
+        insert_image_button = Button(frame, text="Open image", bg = "medium sea green",font=("Ariel,12"),
+                                     width = 40, bd = 5, relief = RIDGE, padx=10, pady=20,  state = DISABLED).grid(row=2, column=0, columnspan=2)
     flag_show = 1
     root.filename = filedialog.askopenfilename(title="select a file", filetype=(("ALL FILES", "*.*"),("JPEG", "*.jpg"),("PNG", "*.png"), ("TIF", "*.tif")))
+
+    if not checkPath(root.filename):
+        Select_train_test(0)
     images_path_list.append(root.filename)
 
     image_array = cv.imread(images_path_list[0], 0)
@@ -684,10 +694,8 @@ def get_image():
 
     show_image_button = Button(frameExtract, text="show image", command=show_image, font=("Ariel,10"), width = 20, pady=5).grid(row=0, column=0)
     hide_image_button = Button(frameExtract, text="hide image", state=DISABLED, font=("Ariel,10"), width = 20, pady=5).grid(row=0, column=1)
-    #edit_image_button = Button(frameExtract, text="Edit image", command=EditImage).grid(row=0, column=2, sticky=W + E)
-
-    #mark_Button = Button(frameMarkRun, text="Mark the text", command=Popup_Mark_the_text, bg="hot pink").grid(row=0, column=0, columnspan = 2)
     run_Button = Button(frameMarkRun, text="RUN", command=run_program, font=("Ariel,14"),width = 40, pady=5).grid(row=1, column=0, columnspan = 2)
+
 
 def Select_train_test(var):
     global myLabel, clicked, frame, options, root, status_program, image_label, frameExtract, frameMarkRun, frame_text
@@ -700,7 +708,7 @@ def Select_train_test(var):
     value = clicked.get()
     frame = Frame(root,  bg= "steel blue")
     frame.grid(row=3, column=0, columnspan=2)
-    #is Train - collect Data
+
     if value == Status_program(0):
 
         status_program = Status_program(0)
@@ -713,12 +721,13 @@ def Select_train_test(var):
 
     if value == Status_program(1):
         status_program = Status_program(1)
-        myLabel = Label(frame, text="Run tesseract on the lateset training machine", bg= "steel blue", font = ("Ariel", 14)).grid(row=0,  column =0, columnspan = 2)
+        myLabel = Label(frame, text="Run tesseract on the lateset training machine", bg= "steel blue",
+                        font = ("Ariel", 14)).grid(row=0,  column =0, columnspan = 2)
         drop = OptionMenu(root, clicked, *options, command=Select_train_test)
         drop.config(width=30, font=('Ariel, 14'))
         drop.grid(row=1, column=0, columnspan = 2)
-        insert_image_button = Button(frame, text="Open image", command=get_image, font=("Ariel,12"), width = 40, padx=10, pady=20).grid(row=2, column=0, columnspan = 2)
-        # showImageAndExtractedText()
+        insert_image_button = Button(frame, text="Open image", command=get_image, font=("Ariel,12"), width = 40, padx=10,
+                                     pady=20).grid(row=2, column=0, columnspan = 2)
     frame.mainloop()
 
 
@@ -1191,33 +1200,36 @@ def tryagain():
     global frame_text
     frame_text.destroy
     Select_train_test(0)
+
 def open_help_window(type):
     top = Toplevel()
-    top.title("help")
     top.geometry("400x400")
     if type == Status_program(0):
-        txt_file = open(HELP_TEXT_DOC_CREATE, "r")
-        #txt_file = open(HELP_TEXT_DOC, "r", encoding="utf-8")
+        top.title("help "+str(Status_program(0)))
+        txt_file = open(HELP_TEXT_DOC_CREATE, "r", encoding="utf-8")
         text = txt_file.read()
         txt_file.close()
     elif type == Status_program(1):
-        txt_file = open(HELP_TEXT_DOC_EXTRACT, "r")
-        #txt_file = open(HELP_TEXT_DOC, "r", encoding="utf-8")
+        top.title("help "+str(Status_program(1)))
+        txt_file = open(HELP_TEXT_DOC_EXTRACT, "r", encoding="utf-8")
         text = txt_file.read()
         txt_file.close()
+    numCharLine  = [len(line) for line in text.split("\n")]
+    top.geometry(str(max(numCharLine)*6)+"x400")
 
-    my_help = Label(top, text=text)
+    my_help = Label(top, text=text, justify='right')
     my_help.pack()
     top.mainloop()
 
 def setmodel():
-    global entrylabel, modelName
+    global entrylabel, modelName, root_model
     if entrylabel.get()!= "":
         modelName = entrylabel.get()
         popup_message("Switch model name, thank you", maessage_type(0))
+        root_model.destroy()
 
 def new_window_selectModel(root):
-    global entrylabel
+    global entrylabel, root_model
     root_model = Toplevel()
     root_model.title("Choose your traineddata model - make sure it is in the tessdata folder")
     root_model.geometry(str(IMAGE_WIDTH_TO_SHOW)+"x150")
@@ -1232,8 +1244,8 @@ def new_window_selectModel(root):
     entrylabel = Entry(root_model, borderwidth=5, width = 30)
     entrylabel.grid(row=2, column=0, columnspan = 3 )
 
-    button_saveImage = Button(root_model, text="Save",width = 20, padx=5, pady=5, command = setmodel)
-    button_saveImage.grid(row=3, column=1)
+    button_save = Button(root_model, text="Save",width = 20, padx=5, pady=5, command = setmodel)
+    button_save.grid(row=3, column=1)
     root_model.mainloop()
 
 def run_program(finishWrop = False, finishEdit = False):
@@ -1336,8 +1348,8 @@ def main():
     menubar.add_cascade(label="Model", menu=modelmenu)
 
     helpmenu = Menu(menubar, tearoff=0)
-    helpmenu.add_command(label = "Help - extract text", command = lambda: open_help_window(Status_program(0)))
-    helpmenu.add_command(label = "Help - create data", command = lambda: open_help_window(Status_program(1)))
+    helpmenu.add_command(label = "Help - create data", command = lambda: open_help_window(Status_program(0)))
+    helpmenu.add_command(label = "Help - extract text", command = lambda: open_help_window(Status_program(1)))
     menubar.add_cascade(label="Help", menu=helpmenu)
 
     root.config(menu=menubar)

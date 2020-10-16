@@ -1,0 +1,19 @@
+OUT DOCKER:
+cd ~/Documents/shecodes/train/train-tesseract
+sudo docker-compose -f docker.dev.yml up
+sudo docker exec -ti train-ocr-heb bash
+
+IN DOCKER:
+cd /app/src/tesstrain/data
+rm -r heb?-ground-truth
+mkdir hebX-ground-truth
+cp -a /app/data/hebX-ground-truth/* /app/src/tesstrain/data/hebX-ground-truth/.
+cd /app/src/tesstrain/
+make training MODEL_NAME=heb? START_MODEL=heb LANG_TYPE=RTL PSM=7 TESSDATA=/usr/local/share/tessdata
+cp /app/src/tesstrain/data/heb?.traineddata /usr/local/share/tessdata/
+
+OUT DOCKER:
+sudo docker container ls
+sudo docker cp CONTAINERID:/app/src/tesstrain/data/heb?-MODEL.traineddata /usr/share/tesseract-ocr/4.00/tessdata
+
+
