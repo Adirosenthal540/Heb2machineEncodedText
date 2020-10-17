@@ -166,7 +166,7 @@ def saveImagelabel():
     button_saveImage = Button(root_setLabel, text="Save the image with this label", padx=70, pady=20, command = saveImagelabel, bg = "medium sea green")
     button_saveImage.grid(row=4, column=1)
 
-    statuslabel = Label(root_setLabel, text="Image 1 of " + str(numImageLine+1)+", "+str(countImageGotLabel)+" images got labeled", bd=1, relief=SUNKEN)
+    statuslabel = Label(root_setLabel, text="Image "+str(numImageLine+1)+" of " + str(len(newLabeleForTrain))+", "+str(countImageGotLabel)+" images got labeled", bd=1, relief=SUNKEN)
     statuslabel.grid(row=6, column=0, columnspan=3)
 
 def insert_new_labeled_image():

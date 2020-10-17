@@ -8,20 +8,9 @@ except ImportError:
     import Image
 from difflib import SequenceMatcher as SQ
 
-#def calcMatch(realtext, resultText, compare_methods = "SQ"):
-#    # if compare_methods == "jaro winkler":
-#    #     result_score = jellyfish.jaro_winkler_similarity(realtext, resultText) * 100
-#   elif compare_methods == "SQ":
-#    result_score = calcMatchLine(realtext, resultText)
-
-#    return result_score
-
-
 def calcMatch(textTrue, textResult):
     textTrue_lines = textTrue.split("\n")
-    print(textTrue_lines)
     textResult_lines = textResult.split("\n")
-    print(textResult_lines)
     num_lineTrue = 0
     num_lineResult = 0
     sum_score = 0
@@ -29,11 +18,6 @@ def calcMatch(textTrue, textResult):
     while num_lineTrue != len(textTrue_lines) and num_lineResult != len(textResult_lines):
         while textResult_lines[num_lineResult] == "" or textResult_lines[num_lineResult] == " " and num_lineResult != len(textResult_lines) - 1:
             num_lineResult += 1
-        #print(textResult_lines[num_lineResult])
-        #print(textTrue_lines[num_lineTrue])
-        #print(num_lineTrue)
-        #print(num_lineResult)
-        #print(SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100)
         sum_score += SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100
         count += 1
         num_lineTrue+=1
@@ -41,7 +25,7 @@ def calcMatch(textTrue, textResult):
     return sum_score / (count-1)
 
 class ModelTesseract:
-    def __init__(self, modelName = "heb7"):
+    def __init__(self, modelName = "heb28"):
         self.acuracy = 0
         self.lang = modelName
 

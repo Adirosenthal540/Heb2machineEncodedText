@@ -7,8 +7,8 @@ except ImportError:
     import Image
 
 # set variable:
-lang = "heb12"
-compare_model = "heb7"
+lang = "heb29"
+compare_model = "heb28"
 compare_methods = "SQ"
 
 HOME_DIRECTORY = config.get_home_directory()
