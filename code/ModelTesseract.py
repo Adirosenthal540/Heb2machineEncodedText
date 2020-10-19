@@ -79,7 +79,7 @@ class ModelTesseract:
 
                 diff = result_score - result_score_befor_train
                 sum_dif+=diff
-                txt_print = f"text: {realText}\nOutput: {resultText}Befor: {resultText_before}Percent coincidence after train: {round(result_score,2)}%\ndiff between befor train and after: {round(diff,2)}%\n"
+                txt_print = f"text: {realText}\nOutput: {resultText}Before: {resultText_before}Percent confidence after train: {round(result_score,2)}%\ndiff between befor train and after: {round(diff,2)}%\n"
                 file_to_save.write(txt_print + "\n\n")
                 sum += result_score
                 count += 1
