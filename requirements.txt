@@ -9,6 +9,8 @@ pytesseract
 datetime
 jellyfish
 difflib
+bs4
+requests
 
 WINDOWS:
 install poppler for Windows and use pdftoppm.exe as follows:

@@ -1,7 +1,9 @@
 import cv2
 import pytesseract
 import datetime
-import jellyfish, os
+import os
+import requests
+import bs4
 try:
     from PIL import Image
 except ImportError:
@@ -18,11 +20,31 @@ def calcMatch(textTrue, textResult):
     while num_lineTrue != len(textTrue_lines) and num_lineResult != len(textResult_lines):
         while textResult_lines[num_lineResult] == "" or textResult_lines[num_lineResult] == " " and num_lineResult != len(textResult_lines) - 1:
             num_lineResult += 1
+        #while textTrue_lines[num_lineTrue] == "" or textTrue_lines[num_lineTrue] == " " and num_lineTrue != len(textTrue_lines) - 1:
+        #    num_lineTrue+=1
+        #print(textResult_lines[num_lineResult] +" - "+ textTrue_lines[num_lineTrue])
         sum_score += SQ(None, textResult_lines[num_lineResult], textTrue_lines[num_lineTrue]).ratio() * 100
         count += 1
         num_lineTrue+=1
         num_lineResult+=1
     return sum_score / (count-1)
+
+def correct_by_google(text):
+    text_lines = text.split("\n")
+    correct_text = ""
+    for line in text_lines:
+        res = requests.get("https://google.com/search?q=" + "".join(line))
+        if res.status_code == 200:
+            soup = bs4.BeautifulSoup(res.text, "html.parser")
+            match = soup.find('div', class_="MUxGbd v0nnCb lyLwlc")
+            if match is not None:
+                correct_line = match.findAll('span')[1].text
+                correct_text = correct_text + correct_line + "\n"
+            else:
+                correct_text = correct_text + line + "\n"
+        else:
+            correct_text = correct_text + line + "\n"
+    return correct_text
 
 class ModelTesseract:
     def __init__(self, modelName = "heb28"):
@@ -33,8 +55,9 @@ class ModelTesseract:
         pass
 
     def ExportTextTesseract(self, image):
-        print(self.lang)
         str = pytesseract.image_to_string(image, lang=self.lang)
+        if self.lang[:3] == "heb" and self.lang != "heb":
+            str = correct_by_google(str)
         return str
 
     def BoxesAroundText(self, img):
@@ -65,9 +88,9 @@ class ModelTesseract:
         for file in files:
             if file[-4:].lower() == ".tif" or file[-4:].lower() == ".tif":
                 img = Image.open(os.path.join(folder_validation, file))
-                resultText = pytesseract.image_to_string(img, lang=lang_trained, config='--psm ' + str(
-                    psm))  # make sure to change your `config` if different
-                resultText.replace("\n", "")
+                resultText = self.ExportTextTesseract(img)
+                #resultText = pytesseract.image_to_string(img, lang=lang_trained, config='--psm ' + str(psm))  # make sure to change your `config` if different
+                #resultText.replace("\n", "")
                 resultText_before = pytesseract.image_to_string(img, lang=compare_model, config="--psm " + str(
                     psm))  # make sure to change your `config` if different
 
@@ -79,6 +102,7 @@ class ModelTesseract:
 
                 diff = result_score - result_score_befor_train
                 sum_dif+=diff
+                print(file)
                 txt_print = f"text: {realText}\nOutput: {resultText}Before: {resultText_before}Percent confidence after train: {round(result_score,2)}%\ndiff between befor train and after: {round(diff,2)}%\n"
                 file_to_save.write(txt_print + "\n\n")
                 sum += result_score

@@ -1,0 +1,1371 @@
+DATE : 20_10 12_53
+Model : heb28
+
+Validation folder: C:\Users\Adi Rosental\Documents\shecodes_finalProject\models-trained\test_models, length data: 162.0
+
+Algorithem of compare strings : SQ
+
+compare to model : heb
+
+text: בשמלה אדומה ושתי צמות,
+Output: בשמלה אדומה ושתי צמות,
+
+Before: = 42 4 1ה־ ©|לואה (/%0 ב2צוות-,
+Percent confidence after train: 100.0%
+diff between befor train and after: 69.81%
+
+
+text: ילדה קטנה, יחידה ותמה
+Output: ילדה קטנה, יחידה ותמה
+
+Before: /ה ק₪₪6ה, יסיפה ותאה '
+Percent confidence after train: 100.0%
+diff between befor train and after: 39.53%
+
+
+text: וארטיק וסוכריות ותות גינה
+Output: וארטיק ו סוכר יות ותות גינה
+
+Before: \ס\ר&יווֹ \©\כלי\ת. |ת\ת. ©י(ה
+Percent confidence after train: 96.15%
+diff between befor train and after: 67.06%
+
+
+text: אני אוהב ימי הולדת ושקיות עם דברים טובים
+Output: אני אוהב ימי הולדת ושקיות פלא דברים טובים
+
+Before: \ע פוה קס יאי הוּוגת. \שזי\ת. במ 5©לי₪ ס\כ,.ק
+Percent confidence after train: 93.83%
+diff between befor train and after: 56.18%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: וו
+בואו נשיר
+מצרים, אז
+דדו חושך
+
+Before: כי סושך )ז3כ'ח;סוצ סו6ון (שיר "י'
+Percent confidence after train: 12.9%
+diff between befor train and after: -32.26%
+
+
+text: תנו לגדול בשקט בלי לקפוא מקור
+Output: תש לגדול בשקט בלי לקפוא מקור
+
+Before: ט (36) 0 ₪© 5] ]₪20| אקור
+Percent confidence after train: 94.74%
+diff between befor train and after: 68.81%
+
+
+text: רק קצת זבל, מים וגם אור.
+Output: רק קצת זבל, מים וגם אור
+
+Before: ק 257_ 5ם/ , אי ו|688 פו.
+Percent confidence after train: 97.87%
+diff between befor train and after: 52.97%
+
+
+text: עמדה ושאלה – למה?
+Output: עמדה ושאלה למה
+
+Before: אכה (ש6/ה - צמה 2
+Percent confidence after train: 90.32%
+diff between befor train and after: 43.26%
+
+
+text: אפונה וגזר, ישבו בתוך מחבט.
+Output: אפונה וגזר, ישבו כמוך מחבת.
+
+Before: ©|©ו₪ |&95, ישק\ כ<וךף א680.
+Percent confidence after train: 88.89%
+diff between befor train and after: 48.89%
+
+
+text: ויחד עם בטטה רצו להיות לבד
+Output: ויחד גם מטטה רצו להיות לבד
+
+Before: /ימ 8% ס סס6ף 9\ (היןות ]8 3
+Percent confidence after train: 92.31%
+diff between befor train and after: 55.27%
+
+
+text: אך שוד ושבר, מישהו גפרור מדליק
+Output: אך שוד ושבר, מישהו גפרור מדליק
+
+Before: 6ו שור |ושקל, אישמו פמ אמיך |
+Percent confidence after train: 100.0%
+diff between befor train and after: 79.66%
+
+
+text: ושמן מכל עבר, זה לא מצחיק!
+Output: שמן מכל עפר, זה לא מצחיק
+
+Before: ושאן א5} ר , >ק ) א3סין !
+Percent confidence after train: 92.0%
+diff between befor train and after: 52.78%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: תו חושן מצדים, אל באו נשאר ל
+
+Before: כ" ח\ט&ך )`!3(־'קו 45|6 כװ;װ ע,סי\' ו\.
+Percent confidence after train: 70.18%
+diff between befor train and after: 43.7%
+
+
+text: רוץ בן סוסי, רוץ ודהר! רוץ בביקעה, טוס בהר!
+Output: רול פן סוסי, רווז ודקר רול בביקעדה, טוס בהרו
+
+Before: ש פן סופי, מ וד! ווד ממים ר , 6 מאו
+Percent confidence after train: 82.76%
+diff between befor train and after: 34.04%
+
+
+text: רוצה, טוסה, יום וליל – פרש אני ובן חיל!
+Output: רוצה, טוסה, יום ותול - פרש אני ובן חוחו
+
+Before: ופק , סוסה, י[ תי - ©לש ©\פ (סן ם] !
+Percent confidence after train: 84.62%
+diff between befor train and after: 44.62%
+
+
+text: אני רץ. אני חייב להספיק כל מה שהעולם מציע
+Output: אני הכל'. אני חייב להספיק כל מה שהעולם אצבע
+
+Before: וע לף. 5וע חים [הקספק © א ש%8₪/₪ 368
+Percent confidence after train: 88.1%
+diff between befor train and after: 67.32%
+
+
+text: כל זמן שהאוויר מגיע וזה לא מפריע ומלטף אותי.
+Output: כל זמן שהאור מגיע הוא לא מפריע ומלט אותי.
+
+ 
+
+Before: 2) >₪ן כטוי אפיפר 8 0\ אפמף װ\תנ& ות , 2
+Percent confidence after train: 91.76%
+diff between befor train and after: 70.34%
+
+
+text: ויש אצלך אור, למה לי לעצור.
+Output: ויש אצלך אור, למה לי תפצור
+
+Before: |י© 5316( =ף , ][א? ]\ 961 .
+Percent confidence after train: 90.57%
+diff between befor train and after: 61.48%
+
+
+text: וכל הרי הגעש וכל הסערות
+Output: וכל הרי הגעש וכל הסערות
+
+Before: (כ] הרי הץצדש |2] ה ס&טית_
+Percent confidence after train: 100.0%
+diff between befor train and after: 46.94%
+
+
+text: אני יודע אני זז וזה פוגע, בלב שלי יש חור
+Output: אני יודע אני זז וזה פוגע, בלב שלי יש חור
+
+Before: 6וע 5%© 5%6 55 וע פוץד, /ם / ©!י 'שדחור 8
+Percent confidence after train: 100.0%
+diff between befor train and after: 55.56%
+
+
+text: שאי אפשר לסגור ואני רץ...
+Output: שאי אפשר לסטאר ואני ר.
+
+Before: שי 6ו ער ]6פור (וע (3...
+Percent confidence after train: 85.11%
+diff between befor train and after: 32.05%
+
+
+text: לי ולך, לי ולך, לי ולך.
+Output: לו לי לו ולך, לי ול.
+
+Before: 1 ו}ן ! תךף, ©? ין. |
+Percent confidence after train: 65.12%
+diff between befor train and after: 28.75%
+
+
+text: בהצלחה באימון!
+Output: בהצלחה באימון ‏
+
+Before: / הב ]חה ©&6ויאון !
+Percent confidence after train: 89.66%
+diff between befor train and after: 41.17%
+
+
+text: עמדו מזעפם ולא מצאו תשובה.
+Output: עמדו מזעפם ולא מצאו תשובה,
+
+Before: או א> 603 ן] א03 תשוקפה.
+Percent confidence after train: 96.15%
+diff between befor train and after: 64.15%
+
+
+text: הוא טיפס על העץ אפרוחים חיפש
+Output: הוא טיפס על העץ אפרוחים חיפש
+
+Before: ן 6900 ! מ7 &(©לוחי© חימ02 `
+Percent confidence after train: 100.0%
+diff between befor train and after: 64.29%
+
+
+text: אוי ואבוי לו לשובב, חור גדול במכנסיו
+Output: אוי ואבוי לו לשובב, חור גדול סומכנסין
+
+Before: ©|י |6ופוי !\ ] שוה8, מור &3/ פ©אכנסי\
+Percent confidence after train: 93.15%
+diff between befor train and after: 47.2%
+
+
+text: מן העץ התגלגל ועונשו קיבל
+Output: מן העץ התגלגל ועונשו קים
+
+Before: אן תד ?-&& ושפו ₪
+Percent confidence after train: 93.88%
+diff between befor train and after: 55.78%
+
+
+text: אני אוהב שוקולד ועוגות גבינה
+Output: אני אוהב שוקולד וזכאות גבינה
+
+Before: ©וכ וק ש©וקו37 |(חטות- ט פנ
+Percent confidence after train: 89.29%
+diff between befor train and after: 49.29%
+
+
+text: אבא אמא סבא סבתא דוד ודודה
+Output: אבא אמא סבא סבתא דוד דודה
+
+Before: >!©ש© ן 1=5 ספת.| 42 לופףל
+Percent confidence after train: 98.04%
+diff between befor train and after: 71.12%
+
+
+text: ואיך שלא אפנה לראות תמיד איתה ארצה
+Output: ואיך שלא אפנה לראות תמיד איתה ארצה
+
+Before: ך 6»>| ©(0([₪ /)ה_ 20 ש_ ר ויכ
+Percent confidence after train: 100.0%
+diff between befor train and after: 78.12%
+
+
+text: להיות, שומרת לי היא אמונים לא מסתובבת
+Output: להיות, שומרת לי ה אמונים לא מסתובבת
+
+Before: ות ,#122כר/ &י %ש| >]/עאקי© &6| תלתנבלר; _
+Percent confidence after train: 97.22%
+diff between befor train and after: 61.78%
+
+
+text: בגנים. וגם אני בין הבריות לא מתפתה לאחרות.
+Output: בגנים וגם אני ב הבריות לא מתפתה לאחרות
+
+Before: =<© [ = !ע אן מכפכית, 66 הת©תף >!חרת ,
+Percent confidence after train: 95.0%
+diff between befor train and after: 65.0%
+
+
+text: בגנים. וגם אני בין הבריות לא מתפתה לאחרות
+Output: בגנים. וגם אני בין הבריות לא מתפתה לאחרות
+
+Before: 206. \& ₪6 פץ המות. 4ו אתפתם &חלות_
+Percent confidence after train: 100.0%
+diff between befor train and after: 55.26%
+
+
+text: והיא הייתה יפה קצת משונה וגם הכוכבים דולקים
+Output: והיא הייתה יפה קצת משונה וגם הכוכבים דולקים
+
+Before: ו) מ”תקב יס ן ?-;_#&(© (6= ף כנכ2י< כופק`ט
+Percent confidence after train: 100.0%
+diff between befor train and after: 81.18%
+
+
+text: שהבוקר יאיר והשמש תזרח והשחר יזכיר
+Output: שהבוקר יאיר והשמש תזרח והשחר יזכיר
+
+Before: *לפוקר שיר ו0,(0 - רח ולשחר !5_כר
+Percent confidence after train: 100.0%
+diff between befor train and after: 43.28%
+
+
+text: הבה נגילה הבה נגילה הבה נגילה ונשמחה
+Output: הבה נגילה הבה נגילה הבה נגילה ונשמחה
+
+Before: קה (©י₪ ת גל (שינד רסורד (&%= [₪ אחר
+Percent confidence after train: 100.0%
+diff between befor train and after: 72.22%
+
+
+text: חשבתי שאולי אתה לא תלך ממני כי איך תסתדרי בלעדי
+Output: חשבתי שאולי אתה לא תלך ממני כי איך תסתדרי בלעדי
+
+Before: חשפתי &6) שותף 4ו 8־%ך אאןי כ` 71 תסת פכ 8& הבי
+Percent confidence after train: 100.0%
+diff between befor train and after: 53.19%
+
+
+text: את שוברת שתיקה כשאני מנסה להבין אותך ושוב
+Output: את שוברת שתיקה שאני מנסה להבין אותך ושוב
+
+Before: 27% ששרת _ ן.!\עו'(ה #ן #סף &ר-ס־\ ת_] ₪0
+Percent confidence after train: 98.77%
+diff between befor train and after: 74.38%
+
+
+text: הכל נשמע חשוב, הכל נשמע פשוט כשאתה איתי
+Output: הכל נשמע חשוב, הכל נשמע פשוט כשאתה איתי
+
+Before: ©כ (₪א1 ת 2|0, ף 35 (4%א3 0©\) כ & ת_ ש1תי.
+Percent confidence after train: 100.0%
+diff between befor train and after: 70.73%
+
+
+text: יש לי יום יום חג יש לי חג יום יום יש לי יום יום חג
+Output: יש לי יום יום חג יש לי חג יום אם יש לי יום יום חג
+
+Before: © פי ם 0© 60 9 4 0& /& יוק ₪5 6 קמ %|8 מק
+Percent confidence after train: 96.97%
+diff between befor train and after: 74.99%
+
+
+text: הללויה.
+Output: 
+Before: תו.
+Percent confidence after train: 0.0%
+diff between befor train and after: -40.0%
+
+
+text: ים השיבולים שמסביב.
+Output: ים השיבולים שמסביב.
+
+Before: י ה6%% ₪206 .
+Percent confidence after train: 100.0%
+diff between befor train and after: 68.75%
+
+
+text: זה לא כל כך נעים לראות גן נעול זה לא כל כך
+Output: זה לא כל כך נעים לראות גן נעול זה לא כל כך
+
+Before: 5 &] 2 לכך (& &#2<ת_ =\ (ו 5 &\ 6 כך
+Percent confidence after train: 100.0%
+diff between befor train and after: 58.97%
+
+
+text: על אש קטנה.
+Output: על ראש הגנב:
+
+Before: + && ת %(=.
+Percent confidence after train: 60.87%
+diff between befor train and after: 33.6%
+
+
+text: נעים לראות גן נעול. זה לא כל כך נעים לראות
+Output: נערים לראות גן נעול. זה לא כל כך נעים לראות
+
+Before: 80 &-_ ס\ (וּל]־ו%י 4 &| כו כל ב ₪
+Percent confidence after train: 98.82%
+diff between befor train and after: 67.24%
+
+
+text: גן נעול.
+Output: גן נעול.
+
+Before: 5) (ח6.
+Percent confidence after train: 100.0%
+diff between befor train and after: 73.33%
+
+
+text: אמצע הלילה בכפר מדליק עוד סיגריה לפני מעצר.
+Output: אמצע הלילה בכפר מדליק עוד סיגריה לפני: מעצר.
+
+Before: כצ תי] ©כפר / 88ף 4 סטריר 96( ₪5
+Percent confidence after train: 98.85%
+diff between befor train and after: 61.52%
+
+
+text: צב, צפרדע, ציפור, צפצפה, צפירה, ליוויתן, צהלה
+Output: צב, צפרדע, ליפור, צפצסה, צפירה, ליוית ן, צהלק
+
+Before: 3,43©3,3י©0 395ש₪, כפירתל, אָיװ'יץ,כ?וו&װ
+Percent confidence after train: 91.11%
+diff between befor train and after: 67.86%
+
+
+text: שבת בבוקר יום יפה אמא שותה המון קפה
+Output: שבת בבוקר יום יפה אמא שותה המון קפה
+
+Before: ש*ת, *פוקר יוח *סף /. &#י₪ עון ם ס
+Percent confidence after train: 100.0%
+diff between befor train and after: 53.62%
+
+
+text: אבא קורא המון עיתון המון עיתון ולי יקנו המון בלון
+Output: אב
+קורא ה
+המון עיתון ה
+
+הינעי
+
+עיתון ולי יקנו ה
+
+אדון בלון
+
+Before: 2- קופ\ װעןן ופן 9ן ריתשן פי 9 ין פן
+Percent confidence after train: 7.84%
+diff between befor train and after: -20.39%
+
+
+text: אני יושב בחדר והשעה כבר מאוחחת מסתכל לך בעיניים
+Output: א ר והשעה כבר מאוחר ז ים
+וש
+וב בחד כלג ע
+ב
+נ ח י
+י
+השש
+הרכ
+ו
+ח
+ותת
+תר
+ב
+
+Before: =[ ₪0 מחלר וה© ער כלר ו החחת_ /סת© 5[ הית
+Percent confidence after train: 61.97%
+diff between befor train and after: 16.52%
+
+
+text: אבל את מדברת והשקט הזה שמסתכל על אהבה
+Output: אבל את לא מדברת והשקט הזה שמסתכל על אהבה
+
+Before: /08 =/ת_ 28] חה_ ו©60 מפ ©/סת2&. 61 .[ מד
+Percent confidence after train: 96.1%
+diff between befor train and after: 83.28%
+
+
+text: שפעם פעמה, אני לא יודע מה קרה. אז למה לבכות
+Output: שפעם פעמה, אני לא יודע מה קרה. אז למה לבכות
+
+Before: = 8040 .ן .[ יב עף רה, (5 46ר מכות_
+Percent confidence after train: 100.0%
+diff between befor train and after: 71.79%
+
+
+text: אבגדהוזחטיכלעפצקרשתףץןךם
+Output: א בגד הוסרטו כלעפצקרש תל קכו
+
+Before: 56 וצכ 6י כ6!?פ3ךר% ת,קוּץ* ( ? א
+Percent confidence after train: 61.54%
+diff between befor train and after: 51.01%
+
+
+text: תמיד אפשר לנסות אם תכסי ת'דמעות, אני פה
+Output: תמיד אפשר לנסות אם תכסי את הדמעות, אני פה
+
+Before: 34 ססר 6[סות. >/ת ה_ בפי ת_49 מ-_ ,ן- פףר
+Percent confidence after train: 95.0%
+diff between befor train and after: 60.0%
+
+
+text: אז נדבר על הכל פתאום הזמן יעבור ואת תראי שהלילה
+Output: אז נדבר על הכל פתאום הזמן יעבור ואת תראי שהלילה
+
+Before: 56 (פחר 56 עדכ} פת&/6 %&מן פוו גוֹג_ ת -[ 2006
+Percent confidence after train: 100.0%
+diff between befor train and after: 63.44%
+
+
+text: יעבור כי כשרוצים באמת פתאום יש דרך לתת ואת
+Output: יעבור כי כשרוצים באמת פתאובך יש דרך לתת ואות
+
+Before: עגור בי כשרוכי₪ ”:&!/אַ(פװעװטוֹ ₪ ףר? 8`(`י-. ות_
+Percent confidence after train: 95.35%
+diff between befor train and after: 47.0%
+
+
+text: תראי שהלילה יעבור. אני לא בקטע של לריב אז מותק
+Output: תראי שהלילה יעבור. אני לא בקטע של לריב או מותך
+
+Before: באי [&נ;&װ לחור. שוע ₪4 10 & (רים - /װק
+Percent confidence after train: 95.65%
+diff between befor train and after: 58.01%
+
+
+text: בואי נדבר, בואי נראה מה קורה בנינו ולא נוותר
+Output: בואי נדבר, בואי נראה מה קורה בינינו אז נוותר
+
+Before: מני (דסר, ! [באל ר קוכל %( ו יתב
+Percent confidence after train: 95.45%
+diff between befor train and after: 50.72%
+
+
+text: למרות ששנינו כועסים עכשיו וקל לזרוק הכל לפח
+Output: למרות ששנינו כועסים עכשיו וקל לזרוק הכל לפה
+
+Before: 4אות_ 6₪(/ע כוס = דכ%ו וק) ו#צרוֹך רכ! פח
+Percent confidence after train: 97.67%
+diff between befor train and after: 47.67%
+
+
+text: חלון נפתח.
+Output: חלון נפתח.
+
+Before: תזון (סרע,
+Percent confidence after train: 100.0%
+diff between befor train and after: 70.0%
+
+
+text: מצחיק, לצחקק, מצחקקים, צחוק, צחוקים, צחקנו
+Output: מצחיק, לצ'ק , מצהרים, צחוק, צחוקים, צחקנו
+
+Before: 3#זק, נבחןן , כסקיןיס, בחוך, 3 חייה, בח
+Percent confidence after train: 89.16%
+diff between befor train and after: 42.24%
+
+
+text: אל  תשמרי לי מקום לצידך תתעוררי אני הולך, תחייכי
+Output: אל תשאירי מקום לצידך תתעוררי אני הולך, תחייכי
+
+Before: &_ ת&ארי פי אקו %ב?)' יתי = ך,ן]?יתח.כ.
+Percent confidence after train: 92.47%
+diff between befor train and after: 57.99%
+
+
+text: את יודעת. אל תשמרי
+Output: את יודעת. אל תשמרי
+
+Before: *ות וה_- ש!} ק 7₪ עפי
+Percent confidence after train: 100.0%
+diff between befor train and after: 69.23%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתףץןךם
+Output: אבגד הוז חטי כל מנסע פז קרשת עץ רם
+
+Before: &2&8לן[6 מ0י© ₪ [&©94כירות-++| ף =
+Percent confidence after train: 75.41%
+diff between befor train and after: 68.85%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתץףןךם
+Output: א בגצהוחט יכלמנהע טצקרשת ללן ט
+
+Before: /2} גר וכ ה) וֹ&ע[ס%ק%\;%?( 2 ₪
+Percent confidence after train: 66.67%
+diff between befor train and after: 59.77%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתץףןךם
+Output: אבגדהוז רחטיכלא נס פעקר שותל גלים
+
+Before: ;/כ&?װע%?&!װלוֹךפ%?\%;}/),02;
+Percent confidence after train: 66.67%
+diff between befor train and after: 55.95%
+
+
+text: אבגדהוזחטיכלמנסעפצקרשתףץןךם
+Output: ל
+
+נן
+אבגדהוזחטי למו ע פצקרשת ן ן ם
+י : וה
+
+Before: /2 נר ( ה© `ך5נ,(וֹכ;5ך30קר,%ר;-7}}”`?" \ 2 ₪
+Percent confidence after train: 7.14%
+diff between befor train and after: -1.19%
+
+
+text: בשמלה אדומה ושתי צמות,
+Output: בשמלה א דומה ושתי צמות
+
+Before: שע ר =[ ב וע- (%ת1 /5 עות_ |
+Percent confidence after train: 95.45%
+diff between befor train and after: 67.45%
+
+
+text: ילדה קטנה, יחידה ותמה
+Output: ילדה קטנה, יחידה ותמה
+
+Before: ם 73(6(7, יתי ות אף
+Percent confidence after train: 100.0%
+diff between befor train and after: 60.0%
+
+
+text: עמדה ושאלה – למה?
+Output: עמדה ושאלה למה
+
+ 
+
+Before: (©.ו] - 4 2=4 |
+Percent confidence after train: 90.32%
+diff between befor train and after: 71.57%
+
+
+text: וכל הרי הגעש וכל הסערות
+Output: וכל הרי הגעש וכל הסערות
+
+Before: וכ) %רי %©1.0 (& 40 כת_
+Percent confidence after train: 100.0%
+diff between befor train and after: 60.87%
+
+
+text: עמדו מזעפם ולא מצאו תשובה.
+Output: עמדו מפעפם ולא מאדן תשובה
+
+Before: אוה 807598 ון 34] - %(%ף
+Percent confidence after train: 86.27%
+diff between befor train and after: 74.27%
+
+
+text: יונתן הקטן רץ בבוקר אל הגן
+Output: יונת הקטר בבוקר אל הגן
+
+ 
+
+Before: יוע <ף| <% <<ור 0 ם\
+Percent confidence after train: 91.67%
+diff between befor train and after: 52.54%
+
+
+text: הוא טיפס על העץ אפרוחים חיפש
+Output: הוא טיפס על העעי אפרוחום חיפ
+
+Before: הע ©י99 41 #ד >|©מקיה ה 20
+Percent confidence after train: 89.29%
+diff between befor train and after: 67.06%
+
+
+text: אוי ואבוי לו לשובב, חור גדול במכנסיו
+Output: אוי ואבוי לו לשובב, חור גדול במכנסיו
+
+Before: ני ו[ 4\ & %\8=, חור 3%©% 48כ =\
+Percent confidence after train: 100.0%
+diff between befor train and after: 61.76%
+
+
+text: מן העץ התגלגל ועונשו קיבל
+Output: מן העץ התגלגל ולא קיבל
+
+Before: אן ו9 %וה&]1 (ח % ן י<ש
+Percent confidence after train: 85.11%
+diff between befor train and after: 64.27%
+
+
+text: אני אוהב שוקולד ועוגות גבינה
+Output: אני אוהב שוקולד ועוגות גבינה
+
+Before: ע &(ר< ©עור (חנות ז?י(ר 1
+Percent confidence after train: 100.0%
+diff between befor train and after: 69.81%
+
+
+text: וארטיק וסוכריות ותות גינה
+Output: וארטיק וסוכריות ותות גינה
+
+Before: ך (פוכר`\א_ ותנת_ םי(ר
+Percent confidence after train: 100.0%
+diff between befor train and after: 65.96%
+
+
+text: אני אוהב ימי הולדת ושקיות עם דברים טובים
+Output: אני אוהב ימי הולדת ושקיות מדברים אביים
+
+Before: =( >&0?* עי װ\צל( ושן ק +- ב אריט ₪6 י
+Percent confidence after train: 89.74%
+diff between befor train and after: 56.41%
+
+
+text: ואת השמש ואת הירח וגם כמה כוכבים.
+Output: ומות ה עמ ואת הירה ודם כמה כוכבים,
+
+Before: ת_ 14% ו=/ת_ ליכה (8 כאחר כו(כפי₪ .
+Percent confidence after train: 80.6%
+diff between befor train and after: 33.54%
+
+
+text: אפונה וגזר ישבו במקרר 
+Output: א פונה וגזר ישבו במקרר
+
+Before: *]%( |&נר יש\ & אסררר
+Percent confidence after train: 95.45%
+diff between befor train and after: 58.25%
+
+
+text: ויחד עם בטטה התחילו לקטר:
+Output: יחד עם בטטה התחילו לקטר
+
+Before: (ית3 = 9802 יתתנ\ ור6ה
+Percent confidence after train: 95.83%
+diff between befor train and after: 78.81%
+
+
+text: "קר לי ברגליים, תדליק ת'מנורה בקיר,
+Output: יקר ו ב ברגליים, תדליק ת'מנורה בקיר,
+
+Before: װקר 8\ ק,ך,%}ו\ם'ן [ךאַו? רכ,אַערװ. ק\\-».\,ן
+Percent confidence after train: 90.14%
+diff between befor train and after: 75.14%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: כי חושן מערים, אז בואו נשיר
+
+Before: כי תוש א #, _\4_ ג \\ ג,\וּ”\ו.\
+Percent confidence after train: 89.29%
+diff between befor train and after: 56.5%
+
+
+text: תנו לגדול בשקט בערוגה בכפר.
+Output: ת לוגדון בשקש בעשרוצבה הכפר
+
+Before: ־ג ע_ ])2?־”\.8 0,\\9 מסלורוכר תכפכ,
+Percent confidence after train: 74.07%
+diff between befor train and after: 48.68%
+
+
+text: שם תזרח השמש גם מחר
+Output: שלם תזרח השמש גם מחר
+
+Before: ת3_רה ה0%© &6 היה
+Percent confidence after train: 97.44%
+diff between befor train and after: 64.1%
+
+
+text: תנו לגדול בשקט בלי לקפוא מקור
+Output: תנו לב דול בשקט בלי לקפוא מקור
+
+Before: יו 5 ₪ =` ₪974 #ער
+Percent confidence after train: 94.92%
+diff between befor train and after: 65.13%
+
+
+text: רק קצת זבל, מים וגם אור.
+Output: רק קצת זבל, מים וגם אור
+
+Before: כן 23 3©, י& |;=-ר.
+Percent confidence after train: 97.87%
+diff between befor train and after: 60.66%
+
+
+text: אפונה וגזר, ישבו בתוך מחבט.
+Output: אפונה וגזר, ישבו בתוך מחבת.
+
+Before: ש וסכר, י0<ו קי( את?©.
+Percent confidence after train: 96.3%
+diff between befor train and after: 55.48%
+
+
+text: ויחד עם בטטה רצו להיות לבד
+Output: יחד עם בטטה רצו להיות לבד
+
+Before: ”חל 61 0%.י כ 2%&_;0%%
+Percent confidence after train: 98.04%
+diff between befor train and after: 85.54%
+
+
+text: אך שוד ושבר, מישהו גפרור מדליק
+Output: אך שוד ושבר, מישהו גפרור מדליק
+
+Before: = /3 ( %דר, אי 0ו ©פכור אמ ף
+Percent confidence after train: 100.0%
+diff between befor train and after: 55.17%
+
+
+text: ושמן מכל עבר, זה לא מצחיק!
+Output: נש מון מכל עבר, זה לא מצחיק
+
+Before: (%א\ 99©% 6024 ) אנחילי |
+Percent confidence after train: 90.57%
+diff between befor train and after: 74.88%
+
+
+text: כי חושך מצרים, אז בואו נשיר".
+Output: כי חושך מצרים, אז בואו נשיר
+
+Before: כי חשן אגניא,5% %טן ([%כ”.
+Percent confidence after train: 96.43%
+diff between befor train and after: 60.06%
+
+
+text: רוץ בן סוסי, רוץ ודהר! רוץ בביקעה, טוס בהר!
+Output: רול בן סוסין רו ודהרו רול בביקלה, טוס בהרן
+
+Before: כו פן סופי, \ (מור\ םו ם ר , 96 %פר|
+Percent confidence after train: 84.71%
+diff between befor train and after: 36.6%
+
+
+text: רוצה, טוסה, יום וליל – פרש אני ובן חיל!
+Output: רוצה, טוסה, יום וליל - פרש אני. ובן חיל
+
+Before: כול, ) וסה יא 10 - פ\ =|(. (\ ק !
+Percent confidence after train: 94.87%
+diff between befor train and after: 50.43%
+
+
+text: אני רץ. אני חייב להספיק כל מה שהעולם מציע
+Output: רל. אני חייב להספיק כל מה שהעולם מציע
+
+Before: 0 ר).צ](; קי ס© ף 2 עאד ש חו© *63#*
+Percent confidence after train: 92.31%
+diff between befor train and after: 60.73%
+
+
+text: כל זמן שהאוויר מגיע וזה לא מפריע ומלטף אותי.
+Output: כל זמן ש האוויר מגיע וזה לא מפריע ומלטף אותי
+
+Before: כ 5ין ר יש וכי & ע9כ+© (»})) - 2
+Percent confidence after train: 97.73%
+diff between befor train and after: 66.15%
+
+
+text: ויש אצלך אור, למה לי לעצור.
+Output: ויש אצלך אור, למה לי לעצור,
+
+Before: וי©=(נן »ר, } אל י 355(,
+Percent confidence after train: 96.3%
+diff between befor train and after: 57.08%
+
+
+text: אני יודע אני זז וזה פוגע, בלב שלי יש חור
+Output: אני יודע אני זז ולא פוגע, בלב שלי יש חור
+
+Before: = ונד ! 55 (ע פוסה, מפ ם שי 40 חוכ
+Percent confidence after train: 95.0%
+diff between befor train and after: 57.16%
+
+
+text: שאי אפשר לסגור ואני רץ...
+Output: שאי אפשר לסגור ואני רץ..
+
+Before: ₪ 5% 291 ו ו[ .
+Percent confidence after train: 97.96%
+diff between befor train and after: 67.96%
+
+
+text: בים הרוגע השמש שוקע למי מתגעגע
+Output: בים הרוגע השמש שוקע למי מתגעגע
+
+Before: פי פכואד 94%0& .ן 4%` ית& 161
+Percent confidence after train: 100.0%
+diff between befor train and after: 89.83%
+
+
+text: לי ולך, לי ולך, לי ולך.
+Output: לי ולך, לי ולך, לי ולך
+
+Before: 4 ,י ך ,י ן,
+Percent confidence after train: 97.78%
+diff between befor train and after: 57.78%
+
+
+text: בהצלחה באימון!
+Output: ב
+ה
+עה
+באי
+
+מון
+
+Before: מירכ\ת ף הן \ |
+Percent confidence after train: 13.33%
+diff between befor train and after: -0.46%
+
+
+text: איך אני מחברת את הקבצים ביחד? האם
+Output: אם אני מחבר את הקברים ביחד האג
+
+Before: זין( נסצהת & הה 1308 ₪
+Percent confidence after train: 85.71%
+diff between befor train and after: 56.62%
+
+
+text: הסיפור שלי הוא קצת מוזר
+Output: הסיפור שלי הוא קצת מוזר
+
+Before: פלפיפור &6&י שן ת כת אופר
+Percent confidence after train: 100.0%
+diff between befor train and after: 50.0%
+
+
+text: על בחורה שלא מזמן הכרתי
+Output: על בחורה שלא מזמן הכרתי
+
+Before: }"5 2 חוכ־ 6%_\ #כ!יו\ ה כ רתי
+Percent confidence after train: 100.0%
+diff between befor train and after: 58.49%
+
+
+text: ואיתה אני הולך לבר כל לילה
+Output: ואותה אני הולך לבד כל לילה
+
+Before: ותי (+ הש ר 42 364
+Percent confidence after train: 92.31%
+diff between befor train and after: 55.94%
+
+
+text: והיא הייתה יפה קצת משונה
+Output: והאן ה י ת ה יפה קצת משונה
+
+Before: \0%/ מ”ת = `9© קנת_ ט שו-
+Percent confidence after train: 88.0%
+diff between befor train and after: 71.67%
+
+
+text: תומך בתוך בתי הספר. נשלב עובדים
+Output: תומר בתוך בתי הספר נשלב עובדים
+
+Before: ה ושכ פה ו, הי רסשר , /% /4 שוףליס
+Percent confidence after train: 95.08%
+diff between befor train and after: 76.62%
+
+
+text: סוציאליים במערך החינוכי, ונפתח תוכניות משלימות
+Output: טוצ'י נעליים במערך החינוכי, ונפתח תוכניות אלימות
+
+Before: וי& /ייס, םע”סר; לחיוכי, וכשרהח ה וכניוה. 6 #ישוה-
+Percent confidence after train: 89.36%
+diff between befor train and after: 35.2%
+
+
+text: בבתי הספר. ניישם צעדים שונים לרווחתם
+Output: בית הספר, ניישם צבעים שונים גרווחתם
+
+Before: בפי רסשר , ניי0% 3 שי& %ו(י0 ;רווחה.ס,
+Percent confidence after train: 87.32%
+diff between befor train and after: 41.38%
+
+
+text: של קשישים כמפורט במצע בפרק של
+Output: של, השישים פורט בשבע ספרה של
+
+Before: % ק©%י0 2עשור6 630 פשר? 6%
+Percent confidence after train: 77.19%
+diff between befor train and after: 40.83%
+
+
+text: אזרחים ותיקים. נחוקק חוק שירותי רווחה
+Output: אזרחים ותיקים, נחושה חוה שירותי רווחה
+
+Before: 56רחים וה י?יס , נחוק? חו %ירותי רווסף
+Percent confidence after train: 89.19%
+diff between befor train and after: 19.86%
+
+
+text: שיעגן לראשונה בחקיקה ובאופן מרוכז את
+Output: שיאו לעראשונה בחהיקה וביאופו ארוכ. את
+
+Before: 66ו /2ר&%וכר פחקיקה ופפושו ערוכ 3 פה_
+Percent confidence after train: 79.45%
+diff between befor train and after: 38.36%
+
+
+text: זכויותיהם של אנשים עם מוגבלויות בישראל.
+Output: תכונותיהם של אנשים עם מוגבלויות בישראל,
+
+Before: 5 יוה יס /; &%06י0 06 שוםף שויוה. פי%ר& /,
+Percent confidence after train: 92.31%
+diff between befor train and after: 79.96%
+
+
+text: החוק נועד לתת מענה לכל אדם
+Output: החווה נוער גת אענה לכל אהבים
+
+Before: כחוק כוטל /2ה_ה. עשנה /222 096
+Percent confidence after train: 74.07%
+diff between befor train and after: 31.22%
+
+
+text: עם מוגבלות בכל הנוגע לשירותים ולקצבאות
+Output: עם מוגבלות בכל הנוגע לשירותים הצבאות
+
+Before: 06 שו6ף שוה 2% 2 רנוםט /2 %ירוהיס ו/3?6פפוה.
+Percent confidence after train: 94.59%
+diff between befor train and after: 60.45%
+
+
+text: שהוא זכאי לקבל וכן לשנות את
+Output: שהוא זכאי להבל וכו גשנות את
+
+Before: *רו& 23פי /שק ף /2 וכו / עוה שפה_
+Percent confidence after train: 88.89%
+diff between befor train and after: 55.56%
+
+
+text: ישראל היא הבית הלאומי של העם
+Output: ישר אל קיא קהילת קלורי של קים
+
+Before: *&ו )) ו©6) ולית %)&ו/י ©&) וק
+Percent confidence after train: 73.68%
+diff between befor train and after: 42.65%
+
+
+text: היהודי וישראל היא הבית של כולנו
+Output: קוד' וישראל קז קהילת של כולנו
+
+Before: ווי (/*©&ו )) ו©6 וי9 &} כו}(ו
+Percent confidence after train: 73.33%
+diff between befor train and after: 40.55%
+
+
+text: בין מזרחים לאשכנזים ובין דתיים לחילונים
+Output: הין מזרחים לאשכנזים והין דתיים לחילונים
+
+Before: ?י| #אפו0+ק )&&כ5/5+*ק ופי| 3ת**ק }ק+}ו(יק
+Percent confidence after train: 94.87%
+diff between befor train and after: 65.24%
+
+
+text: הולך וגדל המרחק בין מרכז לפריפריה
+Output: ק
+
+Before: ו ©6%) הווהך לין ורכ6 }ריוריוֹ
+Percent confidence after train: 5.88%
+diff between befor train and after: -41.74%
+
+
+text: בין שמאל לימין ובין אדם לאדם
+Output: בין שמאל לימין ובין אדם לאדם
+
+Before: ?י*י| &6#) }יאוין ופי| &5ק })&56ק
+Percent confidence after train: 100.0%
+diff between befor train and after: 70.49%
+
+
+text: ישנה שחיקה מדאיגה באמון כלפי מוסדות
+Output: י שנה שייקר מדליה אמון כלפי מוסדות
+
+Before: *©&/ר ©&קיןוֹ #/65)*=ו %&און כ}%י אווסכות
+Percent confidence after train: 86.96%
+diff between befor train and after: 47.48%
+
+
+text: המדינה ושומרי החוק וחל כרסום מתמיד
+Output: ק מדיק שומרי החוף חל כרסום מתמשך
+
+Before: 1 ו&ואורי וּקוך ו) כוסוק ותאיכ
+Percent confidence after train: 78.79%
+diff between befor train and after: 41.29%
+
+
+text: בהיקף השירותים הציבוריים הניתנים לאזרחי ישראל
+Output: ה קיק ק שירותים קציהוריים קויתוים לאזרחי ישרא
+
+Before: נוֹוּץ/ז %ו*רות*יק 3%יפורייק %/*יתנ[+יק }&פוק* *&ו &}
+Percent confidence after train: 80.0%
+diff between befor train and after: 43.27%
+
+
+text: ובאיכותם הגיעה השעה לאחד את ישראל
+Output: ה איכותם הליגה השעה לאחד את ישראל
+
+Before: ו?&*כוענק ויוו ו& נו )3506 96 *&ו&}
+Percent confidence after train: 87.88%
+diff between befor train and after: 70.23%
+
+
+text: מחדש ולהבטיח את עתידה מפלגת כחול לבן
+Output: מחדש להקשיח את ותיק מקללת כחול לבן
+
+Before: /0 /}09%י0 6פת גפיכוֹ /2508 כקו} })פ|
+Percent confidence after train: 80.0%
+diff between befor train and after: 52.6%
+
+
+text: מושתתת על שלושה יסודות מרכזיים ביטחון
+Output: מושתתת על שלושה יסודות מרכזיים הביטחון
+
+Before: או& ננת ;) ©&}ו&ו *סוכות #/ו55**ק פיסחון
+Percent confidence after train: 98.67%
+diff between befor train and after: 57.11%
+
+
+text: אל מול הסכנות והאתגרים סביבנו נעמיד
+Output: אל מול סכנות ור אתגרים נהיגה נעים
+
+Before: )) וו} %ו0כנות וו 6)ת2>ויק %0*פנו (}#ויכ
+Percent confidence after train: 76.47%
+diff between befor train and after: 36.47%
+
+
+text: אנחנו אוהבים אותה גאים בה ומחויבים
+Output: אנחנו אוכלים אותו לאיים הק וחייבים
+
+Before: &6/ק/ו &וופ?*יק &6&ותו #&יק לוּ ווקויפיק
+Percent confidence after train: 79.41%
+diff between befor train and after: 38.87%
+
+
+text: אגרוף ברזל נגד חורשי רעתנו לצד
+Output: אזרו ברזל נגד חורשי רעתו לצד
+
+Before: )&וו” לו0) /&3 קור&י ופנו })53
+Percent confidence after train: 93.1%
+diff between befor train and after: 53.1%
+
+
+text: זאת נפעל בתבונה ובאחריות כדי למצות
+Output: ז את נק על התינוק והאחריות כדי' למצות
+
+Before: 5 /) לנגפונו ופ &קרויות כ55+ }#כות
+Percent confidence after train: 76.06%
+diff between befor train and after: 31.94%
+
+
+text: כל סיכוי למשא ומתן אפקטיבי בשיתוף
+Output: כל סיכוי למשא ומתן אפקטיבי השיתו
+
+Before: כ} 0+*כו* }#&& וגתן %6ן6י%* פ &יגו”
+Percent confidence after train: 95.38%
+diff between befor train and after: 54.21%
+
+
+text: הגורמים המתונים בעולם הערבי ובמדינות המערך
+Output: קלורמים קמתווים העולם הערבי והמדינות ערק
+
+Before: וֹורויק וּ#נתו/י*יק לגו}ק ווגרפי ופוּ5י(ות ו//װי־,
+Percent confidence after train: 80.49%
+diff between befor train and after: 41.36%
+
+
+text: לשמור על דמותה ועל זהותה כמדינה
+Output: חזקות כמדריך
+לשמור על דמותה וע
+
+Before: }&אוור ;) כאות%ו וג) כוּותו כוּ5י/ו
+Percent confidence after train: 32.56%
+diff between befor train and after: 14.38%
+
+
+text: יהודית ודמוקרטית באופן מוחלט ישראל 
+Output: יהודית ודמוקרטית האופן מוחלט ישראל
+
+Before: *%ו/וכית וכאוןרסית %&ו| אוק}0 *&ו&}
+Percent confidence after train: 95.65%
+diff between befor train and after: 55.65%
+
+
+text: היא מדינה חזקה ומשגשגת אבל ישראל
+Output: רי א מדיה חזק ומשלשלת אהל ישראל
+
+Before: ו) /#אכינר #כו |/#&&&96 %6) *&ן6}
+Percent confidence after train: 82.54%
+diff between befor train and after: 70.23%
+
+
+text: היא גם מדינה שסועה וכואבת
+Output: קיא עם מזנק שצועק וכואבת
+
+Before: ו& 5ק #וכ5י/ר &0וגוֹ וכו&פ(
+Percent confidence after train: 73.47%
+diff between befor train and after: 54.24%
+
+
+text: הארץ טובה אך נושבת בה רוח
+Output: קארל טוהר אק נושאת שק רוח
+
+Before: וו} סופו ק /& לו ווה
+Percent confidence after train: 72.0%
+diff between befor train and after: 54.22%
+
+
+text: רעה הולך ומעמיק הפער בין יהודים
+Output: ודים
+רק
+ן
+ק
+גר
+ק
+ד
+מומיק
+ולק
+ד
+גר
+
+ר
+
+Before: רגוֹ וק הוי וֹוור לי| *וֹוכיק
+Percent confidence after train: 22.86%
+diff between befor train and after: -20.48%
+
+
+text: ללא יהודים בין אמידים ללא אמידים
+Output: ללא ריקודים הין עמידים ללא אמידים
+
+Before: } *30%יק פי| 6&#יגיק }}& &#יכיק
+Percent confidence after train: 89.23%
+diff between befor train and after: 54.31%
+
+
+text: אני רוצה לאכול גלידה
+Output: אני רוצה לאכול גלידה
+
+Before: ( רוכה אכת #] פ-
+Percent confidence after train: 100.0%
+diff between befor train and after: 55.56%
+
+
+text: אני רוצה לאכול גלידה
+Output: אני רוצה לאכול גלידה
+
+Before: (ו רוכה שטכו 4# פה
+Percent confidence after train: 100.0%
+diff between befor train and after: 52.63%
+
+
+text: הסיפור שלי הוא קצת מוזר
+Output: הסיפור שלי הוא קצת מוזר
+
+Before: פ©סיפור ©&י / ן תקכת האופר -
+Percent confidence after train: 100.0%
+diff between befor train and after: 45.1%
+
+
+text: על בחורה שלא מזמן הכרתי
+Output: על בחורה שלא מזמן הכרתי
+
+Before: } מ חוכר© 4%\ ופה\ = כ רתי
+Percent confidence after train: 100.0%
+diff between befor train and after: 71.43%
+
+
+text: ואיתה אני הולך לבר כל לילה
+Output: ומה אני הולך לבד כל לילה
+
+Before: בת »\+ הש אר 2& ₪4
+Percent confidence after train: 88.0%
+diff between befor train and after: 51.64%
+
+
+text: והיא הייתה יפה קצת משונה
+Output: והיא
+הו
+
+רלה
+
+י פ
+
+ה
+
+ק
+
+ת
+
+נ
+
+וניה
+
+Before: \08( מח”ק ד `©ר?,ר\'נ(ר( א;ף\כל
+Percent confidence after train: 28.57%
+diff between befor train and after: 17.66%
+
+
+text: משהו שאני כותב בכתב יד
+Output: 
+Before: מו - & סותס ‏ סכתס !/?
+Percent confidence after train: 0.0%
+diff between befor train and after: -45.45%
+
+
+text: משהו שאני כותב בכתב יד
+Output: מישהו את סתם מכתבים נד
+
+Before: #% - &_ סהמ ככה2 /2
+Percent confidence after train: 59.09%
+diff between befor train and after: 34.7%
+
+
+text: משהו שאני כותב בכתב יד
+Output: שדין שאני סתיו הסתה ו
+
+Before: \ .\ &[ כת נסע /
+Percent confidence after train: 41.86%
+diff between befor train and after: 10.28%
+
+
+text: משהו שאני כותב בכתב יד
+Output: 
+Before: א %ו / &]/ / פותס / סכתס ! 3
+Percent confidence after train: 0.0%
+diff between befor train and after: -36.0%
+
+
+text: משהו שאני כותב בכתב יד
+Output: לאן שוו בוקבה בהתה בי
+
+Before: א \ ₪ ב ת \
+Percent confidence after train: 37.21%
+diff between befor train and after: 6.91%
+
+
+text: ואיך שלא אפנה לראות תמיד איתה ארצה
+Output: ואיך שלא אפנה לראות תמיד איתה ארצה
+
+Before: ף 666| ©(0[© /-_ 1=8- 6|רכ₪
+Percent confidence after train: 100.0%
+diff between befor train and after: 80.33%
+
+
+text: להיות, שומרת לי היא אמונים לא מסתובבת
+Output: להיות, שומרת לי ה אמנים לא משתנה וורד
+
+Before: באות_ , 2 אמה_ &- ©.\ -!את/י© &06 הלתנאתר_
+Percent confidence after train: 81.08%
+diff between befor train and after: 53.23%
+
+
+text: .בגנים. וגם אני בין הבריות לא מתפתה לאחרות.
+Output: בגנים. וגם אני בץ גהב ריות לא וחתפתה לאחרת
+
+Before: 8 ].6. ום= -!ע פן םכיע_ 1=6 הת©ת &[ח תש
+Percent confidence after train: 87.06%
+diff between befor train and after: 52.91%
+
+
+text: והיא הייתה יפה קצת משונה וגם הכוכבים דולקים
+Output: והיא הייתה יפה קצת משונה וגם הכוכבים דולקים
+
+Before: ו) מ”ת= יס \37-; #& ו(ר (©= 9%כ(כ6-8 ל©ק`6
+Percent confidence after train: 100.0%
+diff between befor train and after: 78.82%
+
+
+text: על אש קטנה.
+Output: על ראש הגנב:
+
+Before: נ 25] ין ©(©.
+Percent confidence after train: 60.87%
+diff between befor train and after: 44.2%
+
+
+text: תשירו שיר לשלום אל תלחשו תפילה
+Output: תשירו שיר לשלום אל תלחשו תפילה
+
+Before: ין ©ל7 06%6 >© ₪94\ תפיע
+Percent confidence after train: 100.0%
+diff between befor train and after: 66.67%
+
+
+text: שלומית בונה סוכה מוארת וירוקה על כן היא עסוקה
+Output: שלומית בונה סוכה מוארת וירוקה על כן היא עסוקה
+
+Before: 86ו אית. תו(ף סוכף ו(- ויסקוה ₪ כן ©ש| טקד
+Percent confidence after train: 100.0%
+diff between befor train and after: 47.13%
+
+
+text: אני רוצה לאכול גלידה
+Output: אני רוצה לאכול גלידה
+
+Before: ש(י רובכה כו 4# פ
+Percent confidence after train: 100.0%
+diff between befor train and after: 51.35%
+
+
+
+mean present : 84.94058309117838
+mean present : 51.437063407344716

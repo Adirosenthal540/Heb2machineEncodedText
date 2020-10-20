@@ -10,15 +10,15 @@ compare to model : heb28
 text: בשמלה אדומה ושתי צמות,
 Output: בשמנה אדומה ושתי צמות,
 Befor: בשימנה אדומה ושתי צמות,
-Percent coincidence after train: 95.45%
-diff between befor train and after: 2.12%
+Percent confidence after train: 95.45%
+diff between before train and after: 2.12%
 
 
 text: ילדה קטנה, יחידה ותמה
 Output: לדה קטנה, יחידה ותמה
 Befor: גלדה קטנה, יחידה ותמה
-Percent coincidence after train: 97.56%
-diff between befor train and after: 2.32%
+Percent confidence after train: 97.56%
+diff between before train and after: 2.32%
 
 
 text: וארטיק וסוכריות ותות גינה
