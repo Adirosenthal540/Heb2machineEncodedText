@@ -9,6 +9,8 @@ The project divided into three main processes:
 3)	Produce Graphical User Interface 
 
 
+files in project :
+
 Main.py:
 The code part that connect with the user and contains the GUI.
 
@@ -42,6 +44,7 @@ Operating instructions:
 1)	clone the project.
 2)	Install all the python classes indicated in the file – “Requirements.txt”.
 3)	Install tesseract 4.
-4)	Copy the trained models from “models-trained” folder to “\SavePath\…\Tesseract-OCR\tessdata”.
-5)	Open the config.py file that in the code folder and change the home_directory to the folder of the project in your own computer.
-6)	Run the program.
+4) 	Train tesseract on your own handwritten data - "instructtion train on docker.txt".
+5)	Copy the trained models from “models-trained” folder to “\SavePath\…\Tesseract-OCR\tessdata”.
+6)	Open the config.py file that in the code folder and change the home_directory to the folder of the project in your own computer.
+7)	Run the program.
