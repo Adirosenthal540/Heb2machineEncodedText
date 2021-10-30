@@ -48,3 +48,5 @@ Operating instructions:
 5)	Copy the trained models from “models-trained” folder to “\SavePath\…\Tesseract-OCR\tessdata”.
 6)	Open the config.py file that in the code folder and change the home_directory to the folder of the project in your own computer.
 7)	Run the program.
+
+for more explanation you can un-zip presentation and check the videos in it.
